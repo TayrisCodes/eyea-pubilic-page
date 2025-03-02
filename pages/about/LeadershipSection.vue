@@ -99,7 +99,6 @@
 import { ref } from 'vue';
 import { Carousel, Slide, Pagination } from 'vue3-carousel';
 import 'vue3-carousel/dist/carousel.css';
-import AboutPersonInfo from '@/components/AboutPersonInfo.vue';
 
 const boards = ref([]); // Data for board members
 const boardItems = ref([]); // Data for mobile view
