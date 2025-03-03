@@ -1,1 +1,0 @@
-import{_ as o,c as s,K as t,o as c}from"./entry.4b02bbfd.js";const r={},a={class:"w-full max-w-screen-4xl overflow-x-hidden mx-auto"};function n(e,l){return c(),s("div",a,[t(e.$slots,"default")])}const d=o(r,[["render",n]]);export{d as default};

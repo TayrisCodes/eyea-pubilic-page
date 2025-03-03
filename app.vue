@@ -19,8 +19,6 @@
   </template>
   
   <style scoped>
-  @import 'tailwindcss/tailwind.css';
-  @import './assets/tailwind.css';
   body {
     @apply dark:bg-dark-third;
   }
