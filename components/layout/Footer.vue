@@ -1,5 +1,123 @@
+<template>
+  <footer class="modern-footer">
+    <div class="footer-grid container mx-auto px-4">
+      <!-- Brand Section -->
+      <div class="brand-section">
+        <NuxtLink to="/" class="logo-link">
+          <img
+            src="@/assets/images/logos/final_logo.svg"
+            alt="EYEA Logo"
+            class="logo transition-transform duration-300 hover:scale-105"
+          />
+        </NuxtLink>
+        <p class="brand-description">
+          Ethiopia's leading youth-led entrepreneurial community driving innovation and economic transformation
+        </p>
+        <div class="social-icons mt-6 flex gap-4">
+          <a 
+            v-for="(icon, index) in socialIcons" 
+            :key="index" 
+            :href="icon.link" 
+            class="social-link"
+            target="_blank"
+            rel="noopener"
+          >
+            <Icon 
+              :name="icon.name" 
+              class="text-2xl text-gray-600 hover:text-yellow-400 transition-colors" 
+            />
+          </a>
+        </div>
+      </div>
+
+      <!-- Navigation Sections -->
+      <div class="nav-columns grid gap-400 sm:grid-cols-3">
+        <!-- Services Column -->
+        <div class="nav-column">
+          <h3 class="section-title text-yellow-400 mb-4">Services</h3>
+          <ul class="space-y-2">
+            <li v-for="link in serviceLinks" :key="link.link">
+              <NuxtLink 
+                :to="link.link" 
+                class="nav-link text-gray-700 hover:text-yellow-400 transition-colors"
+              >
+                {{ link.name }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Engage Column -->
+        <div class="nav-column">
+          <h3 class="section-title text-yellow-400 mb-4">Engage</h3>
+          <ul class="space-y-2">
+            <li v-for="link in engagementLinks" :key="link.link">
+              <NuxtLink 
+                :to="link.link" 
+                class="nav-link text-gray-700 hover:text-yellow-400 transition-colors"
+              >
+                {{ link.name }}
+              </NuxtLink>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Newsletter Column -->
+        <div class="nav-column">
+          <h3 class="section-title text-yellow-400 mb-4">Stay Updated</h3>
+          <form @submit.prevent="submit" class="newsletter-form">
+            <div class="input-group relative">
+              <input
+                v-model="email"
+                type="email"
+                placeholder="E-mail"
+                class="email-input w-full px-4 py- 6rounded-lg border-2 border-yellow-400/80 bg-white/90 focus:border-yellow-400 focus:ring-2 focus:ring-yellow-200 transition-all"
+                required
+              />
+              <button 
+                type="submit" 
+                class="subscribe-btn absolute right-1 top-0 px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded-md transition-all duration-300 shadow-sm"
+                :disabled="loading"
+              >
+                <span v-if="!loading">Subscribe</span>
+                <Icon v-else name="eos-icons:bubble-loading" class="animate-spin text-xl" />
+              </button>
+            </div>
+            <p class="subscription-msg text-gray-500 text-xs mt-2">
+              Monthly updates on events, opportunities, and more
+            </p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Bottom Bar -->
+      <div class="bottom-bar mt-8 py-4 border-t border-gray-200">
+        <div class="flex flex-col md:flex-row items-center justify-between">
+          <p class="copyright text-gray-500 text-sm">
+            © {{ currentYear }} EYEA. All rights reserved.
+          </p>
+          <div class="legal-links flex gap-4 mt-2 md:mt-0">
+            <NuxtLink 
+              to="/terms" 
+              class="legal-link text-gray-500 hover:text-yellow-400 transition-colors text-sm"
+            >
+              Terms of Service
+            </NuxtLink>
+            <NuxtLink 
+              to="/privacy" 
+              class="legal-link text-gray-500 hover:text-yellow-400 transition-colors text-sm"
+            >
+              Privacy Policy
+            </NuxtLink>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+</template>
+
 <script setup>
-import { ref } from 'vue';
+import { ref, computed } from 'vue';
 import { useForm } from 'vee-validate';
 import anonymous_mutator from '@/composable/anonymous_mutator';
 import insert_subscription from '@/API/mutation/subscription/insert.gql';
@@ -7,376 +125,139 @@ import useNotify from '@/use/notify';
 
 const { notify } = useNotify();
 const email = ref('');
-const serviceLinks = ref([
+const loading = ref(false);
+const currentYear = computed(() => new Date().getFullYear());
+
+const socialIcons = [
+  { name: 'uil:facebook', link: '#' },
+  { name: 'uil:twitter', link: '#' },
+  { name: 'uil:instagram', link: '#' },
+  { name: 'uil:linkedin', link: '#' }
+];
+
+const serviceLinks = [
   { name: 'Kena', link: 'https://kena.eyea.et' },
   { name: 'Zelela', link: 'https://zelela.eyea.et' },
   { name: 'Events', link: 'https://www.eyea.et/events' },
-  { name: 'Privacy', link: 'https://www.eyea.et/privacy' },
-]);
-const engagementsLinks = ref([
+  { name: 'Privacy', link: 'https://www.eyea.et/privacy' }
+];
+
+const engagementLinks = [
   { name: 'News', link: 'https://www.eyea.et/news' },
   { name: 'Membership', link: 'https://www.eyea.et/membership' },
   { name: 'Partners', link: 'https://www.eyea.et/partners' },
-  { name: 'Support', link: 'https://www.eyea.et/supports' },
-]);
+  { name: 'Support', link: 'https://www.eyea.et/supports' }
+];
 
-const { mutate, onDone, onError } = anonymous_mutator(insert_subscription);
+const { mutate } = anonymous_mutator(insert_subscription);
 const { handleSubmit } = useForm();
 
-const submit = handleSubmit((_, { resetForm }) => {
-  mutate({ email: email.value })
-    .then(() => resetForm())
-    .catch((error) => console.log('error', error));
-});
-
-onDone(() => {
-  notify({
-    title: 'Subscription',
-    description: 'You have successfully subscribed to our newsletter',
-    cardClass: 'bg-green-100',
-  });
-});
-
-onError(() => {
-  notify({
-    title: 'Subscription',
-    description: 'You have already subscribed to our newsletter',
-    cardClass: 'bg-red-100',
-  });
+const submit = handleSubmit(async () => {
+  loading.value = true;
+  try {
+    await mutate({ email: email.value });
+    notify({
+      title: 'Success!',
+      description: 'You have successfully subscribed',
+      type: 'success'
+    });
+    email.value = '';
+  } catch (error) {
+    notify({
+      title: 'Error',
+      description: 'Subscription failed. You might be already subscribed.',
+      type: 'error'
+    });
+  } finally {
+    loading.value = false;
+  }
 });
 </script>
 
-<template>
-  <footer class="footer-container">
-    <div class="footer-grid">
-      <!-- Brand Section -->
-      <div class="brand-section">
-        <NuxtLink to="/" class="logo-link">
-          <img 
-            src="@/assets/images/logos/final_logo.svg" 
-            alt="EYEA Logo"
-            class="logo"
-          >
-        </NuxtLink>
-        <p class="brand-description">
-          Ethiopia's leading youth-led entrepreneurial community driving 
-          innovation and economic transformation
-        </p>
-        <div class="social-icons">
-          <a href="#"><Icon name="uil:facebook" /></a>
-          <a href="#"><Icon name="uil:twitter" /></a>
-          <a href="#"><Icon name="uil:instagram" /></a>
-          <a href="#"><Icon name="uil:linkedin" /></a>
-        </div>
-      </div>
-
-      <!-- Navigation Sections -->
-      <div class="nav-columns">
-        <!-- Service Links -->
-        <div class="nav-column">
-          <h3 class="section-title">Services</h3>
-          <ul>
-            <li v-for="link in serviceLinks" :key="link.link">
-              <NuxtLink :to="link.link" class="nav-link">
-                {{ link.name }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Engagement Links -->
-        <div class="nav-column">
-          <h3 class="section-title">Engage</h3>
-          <ul>
-            <li v-for="link in engagementsLinks" :key="link.link">
-              <NuxtLink :to="link.link" class="nav-link">
-                {{ link.name }}
-              </NuxtLink>
-            </li>
-          </ul>
-        </div>
-
-        <!-- Newsletter Signup -->
-        <div class="nav-column">
-          <h3 class="section-title">Stay Updated</h3>
-          <form @submit.prevent="submit" class="newsletter-form">
-            <div class="input-group">
-              <InputsTextfield
-                name="email"
-                rules="required|email"
-                v-model="email"
-                placeholder="Enter your email"
-                class="email-input"
-                :disabled="loading"
-              />
-              <button type="submit" class="subscribe-btn">
-                <span v-if="!loading">Subscribe</span>
-                <Icon v-else name="eos-icons:bubble-loading" class="loading" />
-              </button>
-            </div>
-            <p class="subscription-msg">
-              Get monthly updates on events, opportunities and more
-            </p>
-          </form>
-        </div>
-      </div>
-
-      <!-- Bottom Bar -->
-      <div class="bottom-bar">
-        <p class="copyright">
-          © {{ new Date().getFullYear() }} EYEA. All rights reserved.
-        </p>
-        <NuxtLink to="/terms" class="legal-link">Terms of Service</NuxtLink>
-        <NuxtLink to="/privacy" class="legal-link">Privacy Policy</NuxtLink>
-      </div>
-    </div>
-  </footer>
-</template>
-
 <style scoped>
-.footer-container {
-  background: linear-gradient(135deg, #c88464 0%, #405c90 100%);
-  padding: 4rem 0;
-  color: #fff; /* Light text for visibility on dark gradient */
+.modern-footer {
+  @apply relative z-10 bg-white/95 backdrop-blur-xl shadow-lg;
+  padding: 4rem 1rem 2rem;
 }
 
 .footer-grid {
   max-width: 1400px;
   margin: 0 auto;
-  padding: 0 1rem;
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 2rem;
+  @apply grid grid-cols-1 md:grid-cols-2 gap-8;
 }
 
 .brand-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  @apply flex flex-col items-center md:items-start;
 }
 
 .logo {
-  width: 180px;
-  height: auto;
-  transition: transform 0.2s ease;
-}
-
-.logo:hover {
-  transform: rotate(-5deg);
+  @apply w-44 h-auto transition-transform duration-300;
+  filter: drop-shadow(0 2px 4px rgba(0,0,0,0.05));
 }
 
 .brand-description {
-  max-width: 300px;
-  text-align: center;
-  margin: 1.5rem 0;
-  font-size: 0.9rem;
+  @apply text-gray-600 text-sm text-center md:text-left my-6 max-w-xs md:max-w-md;
   line-height: 1.6;
-  color: #fff; /* White text for visibility */
 }
 
 .social-icons {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
-
-.social-icons a {
-  color: #fff; /* White icons for visibility */
-  transition: color 0.3s ease;
-}
-
-.social-icons a:hover {
-  color: #FFD700; /* Gold for hover effect */
-}
-
-.nav-columns {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  @apply flex gap-4;
 }
 
 .section-title {
-  font-size: 1.1rem;
-  font-weight: 600;
-  margin-bottom: 1.5rem;
-  position: relative;
-  color: #fff; /* White text for visibility */
+  @apply text-yellow-400 font-semibold mb-4 relative text-lg;
 }
 
 .section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -0.5rem;
-  left: 0;
-  width: 30%;
-  height: 2px;
-  background: #FFD700; /* Gold underline */
+  @apply content-[''] absolute bottom-[-0.5rem] left-0 w-8 h-[2px] bg-yellow-400;
 }
 
 .nav-link {
-  display: block;
-  margin-bottom: 0.8rem;
-  color: #fff; /* White text for visibility */
-  transition: color 0.3s ease;
+  @apply text-gray-700 hover:text-yellow-400 transition-colors text-sm py-1;
+  @apply relative before:absolute before:-bottom-1 before:left-0 before:w-0 before:h-[2px] before:bg-yellow-400 before:transition-all before:duration-300;
 }
-
-.nav-link:hover {
-  color: #FFD700; /* Gold for hover effect */
-}
+.nav-link:hover::before { @apply w-full; }
 
 .input-group {
-  position: relative;
+  @apply relative mt-4;
 }
 
 .email-input {
-  width: 100%;
-  padding: 12px 16px;
-  border: 2px solid #FFD700; /* Gold border */
-  border-radius: 8px;
-  outline: none;
-  background: rgba(255, 255, 255, 0.1); /* Transparent white for input */
-  color: #fff; /* White text for input */
-  transition: border-color 0.3s ease;
+  @apply pl-4 pr-24 py-3 rounded-lg border-2 border-yellow-400/80 bg-white/90 placeholder-gray-400;
+  transition: all 0.3s ease;
 }
 
 .email-input:focus {
-  border-color: #FFA500; /* Orange for focus */
-}
-
-.email-input::placeholder {
-  color: #fff; /* White placeholder text */
-  opacity: 0.7;
+  @apply border-yellow-400 ring-2 ring-yellow-200;
 }
 
 .subscribe-btn {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  background: #FFA500; /* Orange button */
-  color: #fff; /* White text for button */
-  padding: 12px 24px;
-  border: none;
-  border-radius: 0 8px 8px 0;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.subscribe-btn:hover {
-  background: #FFD700; /* Gold for hover */
-}
-
-.loading {
-  animation: spin 1s linear infinite;
+  @apply absolute right-1 top-1 px-6 py-2 bg-yellow-400 hover:bg-yellow-500 text-white rounded-md transition-all duration-300 shadow-sm;
 }
 
 .subscription-msg {
-  margin-top: 0.8rem;
-  font-size: 0.9rem;
-  color: #fff; /* White text for visibility */
+  @apply text-gray-500 text-xs mt-2;
 }
 
 .bottom-bar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 1.5rem 0;
-  border-top: 1px solid #FFD700; /* Gold border */
-  background: rgba(0, 0, 0, 0.1); /* Semi-transparent dark background */
-}
-
-.copyright {
-  font-size: 0.9rem;
-  color: #fff; /* White text for visibility */
-}
-
-.legal-link {
-  font-size: 0.9rem;
-  color: #fff; /* White text for visibility */
-  transition: color 0.3s ease;
-}
-
-.legal-link:hover {
-  color: #FFD700; /* Gold for hover */
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  @apply flex flex-col md:flex-row justify-between items-center py-4 mt-8 border-t border-gray-200;
 }
 
 @media (max-width: 768px) {
   .footer-grid {
-    grid-template-columns: 1fr;
-    row-gap: 1.5rem;
-    padding: 0 0.5rem; /* Reduced padding for mobile */
+    @apply grid-cols-1 gap-6;
   }
-  
   .nav-columns {
-    display: grid;
-    grid-template-areas: 
-      "services engage"
-      "stay stay";
-    gap: 1.5rem;
+    @apply grid-cols-2;
   }
-
-  .nav-column:nth-child(1) {
-    grid-area: services;
+  .nav-column:last-child {
+    @apply col-span-2;
   }
-
-  .nav-column:nth-child(2) {
-    grid-area: engage;
-  }
-
-  .nav-column:nth-child(3) {
-    grid-area: stay;
-  }
-
-  .brand-section {
-    align-items: flex-start; /* Align left on mobile */
-  }
-
   .brand-description {
-    text-align: left; /* Left-align description on mobile */
-    max-width: 100%; /* Full width on mobile */
+    @apply max-w-full;
   }
-
-  .social-icons {
-    margin-top: 1rem;
-    justify-content: flex-start; /* Align left on mobile */
-  }
-
-  .section-title {
-    font-size: 1rem; /* Slightly smaller title on mobile */
-  }
-
-  .nav-link {
-    font-size: 0.9rem; /* Smaller links on mobile */
-  }
-
-  .input-group {
-    margin-bottom: 0.5rem; /* Reduced margin for mobile */
-  }
-
-  .email-input {
-    padding: 10px 14px; /* Slightly smaller padding on mobile */
-  }
-
-  .subscribe-btn {
-    padding: 10px 20px; /* Slightly smaller padding on mobile */
-  }
-
-  .subscription-msg {
-    font-size: 0.8rem; /* Smaller text on mobile */
-  }
-
-  .bottom-bar {
-    flex-direction: column;
-    gap: 0.5rem;
-    text-align: center; /* Center-align text on mobile */
-  }
-
-  .legal-link {
-    font-size: 0.8rem; /* Smaller legal links on mobile */
+  .legal-links {
+    @apply flex flex-col items-center gap-2 mt-4;
   }
 }
 </style>

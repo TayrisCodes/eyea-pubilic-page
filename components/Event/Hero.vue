@@ -186,7 +186,7 @@ const heroEvents = ref([
 .tagline {
   font-size: 1.25rem;
   font-weight: 600;
-  color: #4299e1; /* Primary color */
+  color: #34126c  ; /* Primary color */
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -199,12 +199,12 @@ const heroEvents = ref([
 }
 
 .highlighted-text {
-  color: #4299e1; /* Highlighted text color */
+  color: #34126c  ; /* Highlighted text color */
 }
 
 .description {
   font-size: 1.125rem;
-  color: #6b7280; /* Grayish text color */
+  color: #34126c  ; /* Grayish text color */
   margin-top: 20px;
   max-width: 480px;
 }
@@ -250,12 +250,12 @@ const heroEvents = ref([
 .event-text {
   font-size: 1.125rem;
   font-weight: 500;
-  color: #475569; /* Dark gray text color */
+  color: #34126c  ; /* Dark gray text color */
   transition: color 0.3s ease;
 }
 
 .event-item:hover .event-text {
-  color: #4299e1; /* Highlighted text color */
+  color: #34126c  ; /* Highlighted text color */
 }
 
 /* CTA Button */
@@ -263,7 +263,7 @@ const heroEvents = ref([
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  background-color: #4299e1; /* Primary color */
+  background-color: #34126c  ; /* Primary color */
   color: #ffffff;
   padding: 16px 32px;
   border-radius: 1rem;
@@ -275,7 +275,7 @@ const heroEvents = ref([
 }
 
 .cta-button:hover {
-  background-color: #3b82f6; /* Darker primary color */
+  background-color: #34126c  ; /* Darker primary color */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
 

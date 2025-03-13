@@ -26,7 +26,7 @@ const onSubmit = handleSubmit((values) => {
 <template>
   <div
     id="contact"
-    class="font-poppins w-full py-12 bg-[#FFF9ED] dark:bg-dark-secondary overflow-hidden"
+    class="font-poppins w-full py-12 bg-[#FFFFFF] dark:bg-dark-secondary overflow-hidden"
   >
     <div class="max-w-5xl mx-auto px-4 md:px-8">
       <!-- Header -->
@@ -73,10 +73,6 @@ const onSubmit = handleSubmit((values) => {
           <div class="contact-item flex items-center space-x-4 animation-fade-in-delay">
             <Icon name="mdi:web-outline" class="text-xl text-primary animate-pulse-slow"></Icon>
             <div>
-              <h3 class="text-lg font-semibold text-dark-primary dark:text-white">Website</h3>
-              <p class="text-primary-light dark:text-dark-text-secondary">
-                www.eyea.et
-              </p>
             </div>
           </div>
           <div class="social-links flex space-x-4 mt-6 animation-fade-in">

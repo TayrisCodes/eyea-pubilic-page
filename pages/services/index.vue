@@ -10,11 +10,11 @@ onMounted(() => {
 
 <template>
   <div>
-    <NavBar nav-class="dark:bg-dark-secondary"></NavBar>
+    <NavBar nav-class="dark:bg-dark-secondary" />
     <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <!-- Hero Section -->
-      <div class="relative py-24 sm:py-32 bg-gradient-to-b from-primary-light/30 dark:from-dark-primary">
-        <div class="absolute inset-0 bg-pattern opacity-10 dark:opacity-20"></div>
+      <div class="relative py-24 sm:py-32 bg-gradient-to-b from-[#215ca3]/30 dark:from-[#215ca3]/20">
+        <div class="absolute inset-0 bg-pattern opacity-10 dark:opacity-20" />
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="text-center">
             <Transition appear name="fade-down">
@@ -22,7 +22,7 @@ onMounted(() => {
                 Services
               </h1>
             </Transition>
-            <div class="mt-6 h-1 w-24 bg-primary mx-auto rounded-full"></div>
+            <div class="mt-6 h-1 w-24 bg-[#215ca3] mx-auto rounded-full" />
           </div>
         </div>
       </div>
@@ -34,9 +34,9 @@ onMounted(() => {
           <div id="capacity_building" class="service-section">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
               <div class="space-y-8">
-                <div class="inline-flex items-center space-x-3 bg-pink-50 dark:bg-pink-900/20 px-4 py-2 rounded-full">
-                  <Icon name="humbleicons:bulb-off" class="text-2xl text-primary" />
-                  <span class="text-primary font-semibold">Capacity Building</span>
+                <div class="inline-flex items-center space-x-3 bg-[#fcb217]/20 px-4 py-2 rounded-full">
+                  <Icon name="humbleicons:bulb-off" class="text-2xl text-[#215ca3]" />
+                  <span class="text-[#215ca3] font-semibold">Capacity Building</span>
                 </div>
                 <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   The Association works to build the capacity of its member entrepreneurs and businesses. This service
@@ -46,7 +46,7 @@ onMounted(() => {
 
                 <!-- Kena Card -->
                 <div class="relative mt-12 p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                  <div class="absolute -top-10 right-8 w-20 h-20 conerDiv bg-[#FF9BA8] flex items-center justify-center rounded-2xl transform hover:scale-105 transition-transform">
+                  <div class="absolute -top-10 right-8 w-20 h-20 conerDiv bg-[#fcb217] flex items-center justify-center rounded-2xl transform hover:scale-105 transition-transform">
                     <img src="@/assets/images/logos/kena_logo.png" class="w-8 h-8" alt="Kena Logo" />
                   </div>
                   <h3 class="text-2xl font-bold text-black dark:text-white mb-4">Kena</h3>
@@ -55,7 +55,7 @@ onMounted(() => {
                     mentorship, access to finance, and market exposure to youth-founded or run businesses.
                   </p>
                   <a href="https://kena.eyea.et/" target="_blank" 
-                     class="inline-flex items-center mt-6 text-primary hover:text-primary-dark">
+                     class="inline-flex items-center mt-6 text-[#215ca3] hover:text-[#1a4a7a]">
                     <span>Explore More</span>
                     <Icon name="jam:arrow-up-right" class="ml-2 text-xl" />
                   </a>
@@ -63,7 +63,7 @@ onMounted(() => {
               </div>
 
               <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-pink-100 to-indigo-100 dark:from-pink-900/20 dark:to-indigo-900/20 rounded-3xl transform -rotate-6"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#fcb217]/20 to-[#369d65]/20 dark:from-[#fcb217]/10 dark:to-[#369d65]/10 rounded-3xl transform -rotate-6" />
                 <img src="@/assets/images/kena-banner.png" 
                      class="relative rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300"
                      alt="Capacity Building" />
@@ -77,16 +77,16 @@ onMounted(() => {
           <div id="advocacy" class="service-section">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
               <div class="relative order-2 lg:order-1">
-                <div class="absolute inset-0 bg-gradient-to-r from-purple-100 to-blue-100 dark:from-purple-900/20 dark:to-blue-900/20 rounded-3xl transform rotate-6"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#215ca3]/20 to-[#fcb217]/20 dark:from-[#215ca3]/10 dark:to-[#fcb217]/10 rounded-3xl transform rotate-6" />
                 <img src="@/assets/images/service-advocacy.png" 
                      class="relative rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300"
                      alt="Advocacy" />
               </div>
 
               <div class="space-y-8 order-1 lg:order-2">
-                <div class="inline-flex items-center space-x-3 bg-purple-50 dark:bg-purple-900/20 px-4 py-2 rounded-full">
-                  <Icon name="grommet-icons:announce" class="text-2xl text-primary" />
-                  <span class="text-primary font-semibold">Advocacy</span>
+                <div class="inline-flex items-center space-x-3 bg-[#215ca3]/20 px-4 py-2 rounded-full">
+                  <Icon name="grommet-icons:announce" class="text-2xl text-[#fcb217]" />
+                  <span class="text-[#fcb217] font-semibold">Advocacy</span>
                 </div>
                 <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   This is one of the areas EYEA has become successful within a short period of time. EYEA launched a
@@ -95,7 +95,7 @@ onMounted(() => {
 
                 <!-- Zelela Card -->
                 <div class="relative mt-12 p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
-                  <div class="absolute -top-10 right-8 w-20 h-20 conerDiv bg-[#4B1796] flex items-center justify-center rounded-2xl transform hover:scale-105 transition-transform">
+                  <div class="absolute -top-10 right-8 w-20 h-20 conerDiv bg-[#215ca3] flex items-center justify-center rounded-2xl transform hover:scale-105 transition-transform">
                     <img src="@/assets/images/logos/zelela_logo.png" class="w-8 h-8" alt="Zelela Logo" />
                   </div>
                   <h3 class="text-2xl font-bold text-black dark:text-white mb-4">Zelela</h3>
@@ -104,7 +104,7 @@ onMounted(() => {
                     and concerned bodies in innovation driven entrepreneurial ecosystem.
                   </p>
                   <a href="https://zelela.eyea.et/" target="_blank" 
-                     class="inline-flex items-center mt-6 text-primary hover:text-primary-dark">
+                     class="inline-flex items-center mt-6 text-[#fcb217] hover:text-[#d89a14]">
                     <span>Explore More</span>
                     <Icon name="jam:arrow-up-right" class="ml-2 text-xl" />
                   </a>
@@ -119,10 +119,10 @@ onMounted(() => {
           <div id="network_and_exposer" class="service-section">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
               <div class="space-y-8">
-                <div class="inline-flex items-center space-x-3 bg-blue-50 dark:bg-blue-900/20 px-4 py-2 rounded-full">
+                <div class="inline-flex items-center space-x-3 bg-[#369d65]/20 px-4 py-2 rounded-full">
                   <Icon name="streamline:interface-arrows-data-transfer-diagonal-arrows-arrow-server-data-diagonal-internet-transfer-network" 
-                        class="text-2xl text-primary" />
-                  <span class="text-primary font-semibold">Network & Exposure</span>
+                        class="text-2xl text-[#215ca3]" />
+                  <span class="text-[#215ca3] font-semibold">Network & Exposure</span>
                 </div>
                 <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed">
                   EYEA works to create networks between members and help entrepreneurs learn from each other as well as
@@ -134,7 +134,7 @@ onMounted(() => {
                 <div class="relative mt-12 p-8 rounded-2xl bg-white dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 border border-gray-100 dark:border-gray-700">
                   <div class="absolute -top-10 right-8 w-20 h-20 conerDiv bg-gray-200 dark:bg-gray-700 flex items-center justify-center rounded-2xl transform hover:scale-105 transition-transform">
                     <Icon name="streamline:interface-arrows-data-transfer-diagonal-arrows-arrow-server-data-diagonal-internet-transfer-network" 
-                          class="text-2xl text-primary" />
+                          class="text-2xl text-[#369d65]" />
                   </div>
                   <h3 class="text-2xl font-bold text-black dark:text-white mb-4">Experience sharing</h3>
                   <p class="text-gray-600 dark:text-gray-300">
@@ -145,7 +145,7 @@ onMounted(() => {
               </div>
 
               <div class="relative">
-                <div class="absolute inset-0 bg-gradient-to-r from-blue-100 to-green-100 dark:from-blue-900/20 dark:to-green-900/20 rounded-3xl transform -rotate-6"></div>
+                <div class="absolute inset-0 bg-gradient-to-r from-[#369d65]/20 to-[#fcb217]/20 dark:from-[#369d65]/10 dark:to-[#fcb217]/10 rounded-3xl transform -rotate-6" />
                 <img src="@/assets/images/service-network-and-exposure.png" 
                      class="relative rounded-2xl shadow-lg transform hover:-translate-y-2 transition-transform duration-300"
                      alt="Network and Exposure" />
@@ -155,7 +155,7 @@ onMounted(() => {
         </Transition>
       </div>
     </div>
-    <LayoutFooter></LayoutFooter>
+    <LayoutFooter />
   </div>
 </template>
 

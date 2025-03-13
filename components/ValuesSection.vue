@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="text-3xl font-bold text-[#349c54] text-center mb-12">Our Values</h3>
+    <h3 class="text-3xl font-bold text-[#215ca3] text-center mb-12">Our Values</h3>
     <div class="grid md:grid-cols-2 gap-8">
       <div v-for="(value, index) in values"
            :key="index"
@@ -32,22 +32,22 @@ const values = [
   {
     title: 'Empowerment & Enablement',
     description: 'Providing tools and guidance to empower young entrepreneurs',
-    color: '#545c5c'
+    color: '#349c54'
   },
   {
     title: 'Collaboration & Engagement',
     description: 'Fostering collaboration for collective action',
-    color: '#5c5c5c'
+    color: '#245ca4'
   },
   {
     title: 'Inclusivity & Accessibility',
     description: 'Ensuring equal opportunities for all',
-    color: '#c88464'
+    color: '#fcb41c'
   },
   {
     title: 'Innovation & Problem-Solving',
     description: 'Encouraging innovative solutions and entrepreneurial culture',
-    color: '#245ca8'
+    color: '#405c90'
   }
 ];
 

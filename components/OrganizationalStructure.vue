@@ -59,7 +59,7 @@
         <path class="main-line" d="M200 350 L1000 350" />
 
         <!-- Level 4 & 5 Lines -->
-        <path class="dashed-line" d="M200 850 L1000 850" />
+        <path class="main-line" d="M200 850 L1000 850" />
 
         <!-- Level 5 Horizontal Line -->
         <path class="main-line" d="M800 700 L600 700" />
@@ -67,10 +67,10 @@
         <!-- Level 6 to Level 7 Line -->
         <path class="main-line" d="M800 500 L600 500" />
         <!-- Operations Manager Vertical Line -->
-        <line x1="600" y1="500" x2="600" y2="600" class="main-line"/>
-        
+        <line x1="600" y1="500" x2="600" y2="600" class="main-line" />
+
         <!-- Level 7 Connectors -->
-        <path d="M600 600 L600 650" class="main-line" fill="none"/>
+        <path d="M600 600 L600 650" class="main-line" fill="none" />
       </svg>
 
       <!-- Level 1 - General Assembly -->
@@ -257,9 +257,9 @@ export default {
   data() {
     return {
       legendItems: [
-        { color: '#245ca8', label: 'Governance' },
-        { color: '#fcb41c', label: 'Advisory' },
-        { color: '#349c54', label: 'Operations' },
+        { color: '#215ca3', label: 'Governance' },
+        { color: '#fcb217', label: 'Advisory' },
+        { color: '#369d65', label: 'Operations' },
         { color: '#3c8c80', label: 'Support' }
       ],
       leadership: [
@@ -351,113 +351,44 @@ export default {
 }
 
 .title {
-  font-size: 1.5rem; /* text-2xl */
-  @media (min-width: 768px) {
-    font-size: 1.875rem; /* md:text-3xl */
-  }
-  font-weight: 700; /* font-bold */
-  text-align: center; /* text-center */
-  margin-bottom: 1.5rem; /* mb-6 */
-  color: #14be7a; /* text-gray-800 */
-}
-.dark .title {
-  color: #ffffff; /* dark:text-white */
+  @apply text-2xl md:text-3xl font-bold text-center mb-6 text-[#215ca3] dark:text-white;
 }
 
 /* Infographic Styles */
 .infographic {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 1rem;
-  margin-bottom: 2rem;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: 64rem;
-}
-
-@media (min-width: 768px) {
-  .infographic {
-    grid-template-columns: repeat(4, 1fr);
-  }
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4 mb-8 mx-auto max-w-4xl;
 }
 
 .info-card {
-  background-color: white;
-  background-color: var(--color-dark-bg-gray-800);
-  border-radius: 0.5rem;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  padding: 1rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  transition: transform 0.3s;
-}
-.info-card:hover {
-  transform: scale(1.05);
+  @apply bg-white dark:bg-gray-800 rounded-lg shadow-md p-4 flex items-center gap-3 transition-transform duration-300 hover:scale-105;
 }
 
 .info-card i {
-  font-size: 1.5rem; /* text-2xl */
-  color: #165fd5; /* text-blue-500 */
-}
-.dark .info-card i {
-  color: #60a5fa; /* dark:text-blue-400 */
+  @apply text-2xl text-[#215ca3] dark:text-[#60a5fa];
 }
 
 .info-content h3 {
-  font-size: 1.5rem; /* text-2xl */
-  font-weight: 700; /* font-bold */
-  color: #1f2937; /* text-gray-800 */
-}
-.dark .info-content h3 {
-  color: #ffffff; /* dark:text-white */
+  @apply text-2xl font-bold text-gray-800 dark:text-white;
 }
 
 .info-content p {
-  font-size: 0.875rem; /* text-sm */
-  color: #4b5563; /* text-gray-600 */
-}
-.dark .info-content p {
-  color: #9ca3af; /* dark:text-gray-400 */
+  @apply text-sm text-gray-600 dark:text-gray-400;
 }
 
+/* Legend Styles */
 .legend {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin-bottom: 2rem;
-  flex-wrap: wrap;
-}
-
-@media (min-width: 768px) {
-  .legend {
-    gap: 1.5rem;
-    margin-bottom: 3rem;
-  }
+  @apply flex justify-center gap-4 mb-8 flex-wrap;
 }
 
 .legend-item {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.75rem; /* text-xs */
-  color: #4b5563; /* text-gray-600 */
-}
-
-@media (min-width: 768px) {
-  .legend-item {
-    font-size: 0.875rem; /* md:text-sm */
-  }
-}
-
-.dark .legend-item {
-  color: #d1d5db; /* dark:text-gray-300 */
+  @apply flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300;
 }
 
 .color-box {
-  @apply w-3 h-3 md:w-4 md:h-4 rounded-sm;
+  @apply w-4 h-4 rounded-sm;
 }
 
+/* Chart Container */
 .chart-container {
   @apply relative mx-auto max-w-7xl hidden md:block;
   min-height: 1200px;
@@ -485,10 +416,7 @@ export default {
 
 /* Level Containers */
 .level-1 {
-  position: absolute;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
+  @apply absolute top-0 left-1/2 transform -translate-x-1/2;
 }
 
 .level-2 {
@@ -517,23 +445,23 @@ export default {
 
 /* Node Types */
 .governance {
-  @apply border-blue-500;
+  @apply border-[#215ca3];
 }
 
 .executive {
-  @apply border-green-300;
+  @apply border-[#369d65];
 }
 
 .advisory {
-  @apply border-yellow-500;
+  @apply border-[#fcb217];
 }
 
 .operations {
-  @apply border-green-600;
+  @apply border-[#369d65];
 }
 
 .support {
-  @apply border-teal-600;
+  @apply border-[#3c8c80];
 }
 
 /* Connectors */
@@ -544,71 +472,71 @@ export default {
 .main-line,
 .dashed-line {
   @apply stroke-2;
-  stroke-dasharray: 1000; /* Set a large dash length to cover the entire path */
-  stroke-dashoffset: 1000; /* Initially hide the line */
+  stroke-dasharray: 1000;
+  stroke-dashoffset: 1000;
 }
 
 .main-line {
-  @apply stroke-blue-400;
+  @apply stroke-[#215ca3];
   animation: drawLine 3s forwards, heartbeat 1.5s infinite ease-in-out alternate;
 }
 
 .dashed-line {
   @apply stroke-gray-400;
-  stroke-dasharray: 5 5; /* Maintain dashed style */
-  animation: drawLine 1s forwards 1s; /* Start 1s later, no heartbeat */
+  stroke-dasharray: 5 5;
+  animation: drawLine 1s forwards 1s;
 }
 
 /* Stagger animations for specific paths */
 .connectors path[d="M200 350 L1000 350"] {
-  animation-delay: 0s; /* Level 3 horizontal line (President to advisory) starts immediately */
+  animation-delay: 0s;
 }
 
 .connectors path[d="M600 100 L600 850"] {
-  animation-delay: 0.5s; /* Main vertical line to Level 5 starts slightly later */
+  animation-delay: 0.5s;
 }
 
 .connectors path[d="M600 100 L600 1200"] {
-  animation-delay: 0.7s; /* Extended vertical line to Level 7 */
+  animation-delay: 0.7s;
 }
 
 .connectors path[d="M800 200 L600 200"] {
-  animation-delay: 0.3s; /* External Auditor line */
+  animation-delay: 0.3s;
 }
 
 .connectors path[d="M200 850 L1000 850"] {
-  animation-delay: 1s; /* Level 4 & 5 dashed line */
+  animation-delay: 1s;
 }
 
 .connectors path[d="M800 700 L600 700"] {
-  animation-delay: 0.9s; /* Level 5 horizontal */
+  animation-delay: 0.9s;
 }
 
 .connectors line[x1="600"][y1="500"] {
-  animation-delay: 0.8s; /* Operations Manager vertical line */
+  animation-delay: 0.8s;
 }
 
 .connectors path[d="M600 600 L600 650"] {
-  animation-delay: 1.2s; /* Level 7 vertical */
+  animation-delay: 1.2s;
 }
 
 /* Animation Keyframes */
 @keyframes drawLine {
   0% {
-    stroke-dashoffset: 1000; /* Line starts hidden */
+    stroke-dashoffset: 1000;
   }
   100% {
-    stroke-dashoffset: 0; /* Line fully drawn */
+    stroke-dashoffset: 0;
   }
 }
 
 @keyframes heartbeat {
   0%, 100% {
-    stroke-width: 2; /* Normal thickness */
+    stroke-width: 2;
     opacity: 0.8;
   }
   50% {
-    stroke-width: 4; /* Thicker during pulse */
+    stroke-width: 4;
     opacity: 1;
   }
 }
@@ -621,7 +549,7 @@ export default {
 @keyframes pulse {
   0% {
     transform: scale(1);
-    box-shadow: 0 0 0 0 rgba(52, 156, 84, 0.7); /* Green shadow matching executive border */
+    box-shadow: 0 0 0 0 rgba(52, 156, 84, 0.7);
   }
   70% {
     transform: scale(1.05);
@@ -631,34 +559,6 @@ export default {
     transform: scale(1);
     box-shadow: 0 0 0 0 rgba(52, 156, 84, 0);
   }
-}
-
-.main-line {
-  @apply stroke-blue-700 stroke-2;
-}
-
-.dashed-line {
-  @apply stroke-gray-800 stroke-2;
-  stroke-dasharray: 5 5;
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.25rem;
-  margin-top: 0.5rem;
-  font-size: 0.75rem;
-}
-
-.status-dot {
-  width: 0.5rem;
-  height: 0.5rem;
-  border-radius: 9999px;
-}
-
-.status-indicator.active .status-dot {
-  background-color: #10b981; /* Tailwind's green-500 */
 }
 
 /* Mobile List View */
@@ -675,23 +575,23 @@ export default {
 }
 
 .governance-title {
-  @apply bg-blue-600 border-l-4 border-blue-800;
+  @apply bg-[#215ca3] border-l-4 border-[#1a4a7a];
 }
 
 .advisory-title {
-  @apply bg-yellow-500 border-l-4 border-yellow-600;
+  @apply bg-[#fcb217] border-l-4 border-[#d89a14];
 }
 
 .executive-title {
-  @apply bg-green-600 border-l-4 border-green-800;
+  @apply bg-[#369d65] border-l-4 border-[#2a7a4f];
 }
 
 .operations-title {
-  @apply bg-green-600 border-l-4 border-green-800;
+  @apply bg-[#369d65] border-l-4 border-[#2a7a4f];
 }
 
 .support-title {
-  @apply bg-teal-600 border-l-4 border-teal-800;
+  @apply bg-[#3c8c80] border-l-4 border-[#2e6a60];
 }
 
 .list-item {
@@ -719,43 +619,11 @@ export default {
   .mobile-list-view {
     display: block;
   }
-
-  .section-group {
-    width: 100%;
-  }
-
-  .list-item {
-    flex-direction: row;
-    align-items: flex-start;
-  }
 }
 
 @media (min-width: 768px) {
   .mobile-list-view {
     display: none;
-  }
-}
-
-/* Ensure chart fits on smaller desktop screens */
-@media (min-width: 768px) and (max-width: 1280px) {
-  .node-content {
-    @apply w-56 p-4;
-  }
-  
-  .node-content h3 {
-    @apply text-base;
-  }
-  
-  .node-content p {
-    @apply text-xs;
-  }
-  
-  .level-3-container {
-    @apply px-1;
-  }
-  
-  .level-7-container {
-    @apply grid-cols-2 px-1 gap-4;
   }
 }
 </style>

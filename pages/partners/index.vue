@@ -193,7 +193,7 @@ const reasons = [
         </div>
 
         <!-- Why Partner Section -->
-        <div class="py-20 bg-third-light dark:bg-dark-secondary relative overflow-hidden">
+        <div class="py-20" style="background-color: #215ca3;">
             <div class="absolute right-0 bottom-0 opacity-10">
                 <NuxtImg format="webp" 
                          loading="lazy"
@@ -208,10 +208,10 @@ const reasons = [
                             <Icon name="mdi:partnership-outline" class="mr-2" />
                             Why Partner
                         </span>
-                        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white mb-4">
+                        <h2 class="text-3xl md:text-4xl font-bold text-white dark:text-white mb-4">
                             Why should you partner with us?
                         </h2>
-                        <p class="text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
+                        <p class="text-white dark:text-gray-300 max-w-3xl mx-auto">
                             EYEA works with government, non-government, and private sector partners to achieve
                             its objective of building an active start-up and youth entrepreneurship ecosystem in Ethiopia.
                         </p>

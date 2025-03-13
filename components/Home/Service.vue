@@ -24,7 +24,7 @@ const services = [
 <template>
   <div
     id="service"
-    class="font-poppins w-full relative dark:bg-dark-secondary lg:pb-[5%] bg-[#FFF9ED] md:px-20 px-2 md:mb-0 pb-10 overflow-hidden"
+    class="relative from-white to-[#349c54]/20 dark:from-gray-900 dark:to-[#245ca4]/20 overflow-hidden isolate"
   >
     <LayoutSectionHeader
       iconName="uil:shop"

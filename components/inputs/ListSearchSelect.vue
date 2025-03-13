@@ -1,8 +1,7 @@
 <script setup>
-// import { ref, computed,  onBeforeMount, toRefs } from "vue";
-import { useDebounceFn } from "@vueuse/core";
+import { ref, computed, onBeforeMount, toRefs } from "vue";
+import { useDebounceFn, onClickOutside } from "@vueuse/core";
 import { useField } from "vee-validate";
-import { onClickOutside } from "@vueuse/core";
 
 const emit = defineEmits([
   "update:modelValue",
@@ -10,165 +9,85 @@ const emit = defineEmits([
   "search",
   "onSelectionFound",
 ]);
+
 const props = defineProps({
   id: String,
-  label: {
-    type: String,
-  },
-  name: {
-    type: String,
-    required: true,
-  },
-  multiple: {
-    type: Boolean,
-    default: false,
-  },
-  items: {
-    type: Array,
-    required: true,
-    default() {
-      return [];
-    },
-  },
-  text: {
-    type: String,
-    default: "name",
-  },
-  value: {
-    type: String,
-    default: "id",
-  },
-  search: {
-    type: String,
-  },
-  modelValue: {
-    type: [String, Array, Object],
-    // default: () => [],
-  },
-  selected: {
-    type: String,
-  },
-  loading: {
-    type: Boolean,
-    default: false,
-  },
-  errorMessages: {
-    type: String,
-  },
-  placeHolder: {
-    type: String,
-  },
-  class: {
-    type: String,
-    default: "",
-  },
+  label: String,
+  name: { type: String, required: true },
+  multiple: { type: Boolean, default: false },
+  items: { type: Array, required: true, default: () => [] },
+  text: { type: String, default: "name" },
+  value: { type: String, default: "id" },
+  search: String,
+  modelValue: [String, Array, Object],
+  selected: String,
+  loading: { type: Boolean, default: false },
+  errorMessages: String,
+  placeHolder: String,
+  class: { type: String, default: "" },
   clearable: Boolean,
   trailingIcon: String,
-  rules: {
-    type: String,
-    default: "",
-    required: false,
-  },
-  supporter: {
-    type: String,
-  },
+  rules: { type: String, default: "" },
+  supporter: String,
   hideDetail: Boolean,
   searchPlaceholder: String,
   disabled: Boolean,
   placeholderStyle: String,
 });
 
-const {
-  errorMessage,
-  value: inputValue,
-  meta,
-} = useField(props.name, props.rules, {
+const { errorMessage, value: inputValue, meta } = useField(props.name, props.rules, {
   initialValue: props.modelValue,
 });
 
 const vv = ref(props.selected);
 const selected = ref({});
-const _placeholder = ref(props.placeHolder);
+const _placeholder = ref(props.placeHolder || "Select");
 const show = ref(false);
 const input = ref(null);
 const search = ref(undefined);
 const { items, disabled } = toRefs(props);
-const list_select = ref(null);
+const listSelectRef = ref(null);
 
 onBeforeMount(() => {
   if (props.multiple && inputValue.value) {
-    for (let v in inputValue.value) {
-      selected.value[inputValue.value[v]] = true;
-    }
+    inputValue.value.forEach((v) => (selected.value[v] = true));
   }
 });
 
 const placeholder = computed(() => {
- 
   if (!props.multiple && items.value.length) {
-    let v = items.value.find((e) => e[props.value] === props.selected);
-
-    if (v) {
-      selected.value = v[props.value];
-      _placeholder.value = v[props.text];
-      inputValue.value = v[props.text];
-
-      emit("onSelectionFound", v);
-      return _placeholder.value;
-    } else if (props.placeHolder) {
-      _placeholder.value = props.placeHolder;
-    } else _placeholder.value = 'Select';
-  } else if (
-    props.multiple &&
-    inputValue.value &&
-    inputValue.value.length > 0
-  ) {
-    let mv = [];
-
-    vv.value.forEach((itm) => {
-      items.value.forEach((it) => {
-        if (it[props.value] == itm) {
-          mv.push(it[props.text]);
-        }
-      });
-    });
-    if (mv.length)
-      _placeholder.value = mv.reduce((prev, curr) => {
-        return prev + ",  " + curr;
-      });
-    else if (props.placeHolder) _placeholder.value = props.placeHolder;
-    else {
-      _placeholder.value = "Select";
-      inputValue.value = undefined;
+    const selectedItem = items.value.find((e) => e[props.value] === props.selected);
+    if (selectedItem) {
+      selected.value = selectedItem[props.value];
+      _placeholder.value = selectedItem[props.text];
+      inputValue.value = selectedItem[props.text];
+      emit("onSelectionFound", selectedItem);
     }
+  } else if (props.multiple && inputValue.value?.length > 0) {
+    _placeholder.value = inputValue.value
+      .map((itm) => items.value.find((it) => it[props.value] === itm)?.[props.text])
+      .filter(Boolean)
+      .join(", ") || "Select";
   }
-  
   return _placeholder.value;
 });
 
 const select = (item) => {
-  console.log(item);
   if (props.multiple) {
     selected.value[item[props.value]] = !selected.value[item[props.value]];
-    let selectedd = [];
-    inputValue.value = [];
-    for (let key of Object.keys(selected.value)) {
-      if (selected.value[key]) {
-        inputValue.value.push(key);
-        selectedd.push(key);
-      }
-    }
-    vv.value = selectedd.map((itm) => itm);
-    emit("update:modelValue", selectedd);
-    return;
+    const selectedItems = Object.keys(selected.value).filter((key) => selected.value[key]);
+    vv.value = [...selectedItems];
+    inputValue.value = [...selectedItems];
+    emit("update:modelValue", selectedItems);
+  } else {
+    vv.value = item.id;
+    inputValue.value = item[props.text];
+    emit("update:selected", item[props.value]);
+    emit("update:modelValue", item);
+    selected.value = item[props.value];
+    _placeholder.value = item[props.text];
+    show.value = false;
   }
-  vv.value = item.id; 
-  inputValue.value = item[props.text];
-  emit("update:selected", item[props.value]);
-  emit("update:modelValue", item);
-  selected.value = item[props.value];
-  _placeholder.value = item[props.text];
-  show.value = false;
 };
 
 const outside = useDebounceFn(() => {
@@ -177,9 +96,9 @@ const outside = useDebounceFn(() => {
 
 const open = () => {
   show.value = true;
-
-  input.value.focus();
+  input.value?.focus();
 };
+
 const queryList = () => {
   emit("search", search.value);
 };
@@ -195,14 +114,13 @@ const clear = () => {
   emit("search", "");
 };
 
-onClickOutside(list_select, (e) => (show.value = false));
+onClickOutside(listSelectRef, () => (show.value = false));
 </script>
 
 <template>
   <div class="relative">
     <slot name="label"></slot>
     <div class="relative rounded-md shadow-sm font-body">
-      <!-- @focus removed because of list open before focused  @focus="open" -->
       <button
         type="button"
         :id="id"
@@ -210,106 +128,51 @@ onClickOutside(list_select, (e) => (show.value = false));
         @click="open"
         class="bg-white text-base relative w-full border rounded-md shadow-sm pl-3 pr-10 py-2 text-left cursor-default focus:outline-none focus:ring-1 truncate"
         :class="[
-          errorMessage
-            ? 'focus:ring-red-500 focus:border-red-500 hover:border-red-500 border-red-500'
-            : 'focus:ring-new-tale  focus:border-new-tale hover:border-new-tale border-gray-300 border-1 ',
-          props.class ? props.class : '',
-          disabled ? ' bg-gray-100 !cursor-not-allowed' : '',
-          placeholder && !inputValue ? 'text-gray-500' : '',
+          errorMessage ? 'focus:ring-red-500 focus:border-red-500' : 'focus:ring-new-tale focus:border-new-tale border-gray-300',
+          props.class,
+          disabled ? 'bg-gray-100 cursor-not-allowed' : '',
+          !inputValue ? 'text-gray-500' : '',
         ]"
       >
-        {{ (inputValue) || placeholder || "Select"}} 
+        {{ inputValue || placeholder }}
       </button>
-      <div
-        v-if="trailingIcon"
-        class="absolute inset-y-0 right-0 pr-3 flex items-center pointer-events-none"
-      >
-        <!-- <component class="h-5 w-5 text-gray-400" :is="trailingIcon"></component> -->
+      <div v-if="trailingIcon" class="absolute inset-y-0 right-0 pr-3 flex items-center">
         <Icon :name="trailingIcon" width="25" height="25" color="gray" />
       </div>
-      <div
-        v-if="clearable"
-        @click="clear"
-        class="absolute inset-y-0 right-0 pr-3 flex items-center"
-      >
-        <Icon
-          name="gg:close"
-          width="25"
-          height="25"
-          color="gray"
-          class="cursor-pointer"
-        />
+      <div v-if="clearable" @click="clear" class="absolute inset-y-0 right-0 pr-3 flex items-center">
+        <Icon name="gg:close" width="25" height="25" color="gray" class="cursor-pointer" />
       </div>
     </div>
-
+    
     <ul
-      ref="list_select"
+      ref="listSelectRef"
       v-show="show"
-      :class="supporter"
-      class="px-2 absolute z-50 w-full bg-white dark:bg-dark-secondary  border-r-2 border-l-2 border-b-2 border-new-tale/50 scrollbar scrollbar-thin scrollbar-track-rounded-full scrollbar-track-primary shadow-lg max-h-56 h-auto rounded-br-xl rounded-b-xl text-base overflow-auto"
+      class="absolute z-50 w-full bg-white border rounded-b-xl shadow-lg max-h-56 overflow-auto"
     >
-      <p class="flex justify-center items-center ">
+      <li>
         <input
           ref="input"
           @input="queryList"
           v-model="search"
-          @blur="outside"
-          autocomplete="off"
-          type="text"
-          :name="props.name"
-          id="email"
-          class="my-1 shadow-sm focus:ring-new-tale focus:border-new-tale block sm:text-sm w-full border-gray-300 rounded-md font-body"
+          class="w-full border rounded-md p-2"
           :placeholder="props.searchPlaceholder || 'Search'"
         />
-      </p>
-      <p class="h-1">
-        <InputsProgress
-          v-if="loading"
-          class="rounded-xl w-full"
-          color1="bg-new-tale/40"
-          color2="bg-new-tale"
-          color3="bg-dark-blue"
-          height="h-1"
-        ></InputsProgress>
-      </p>
-      <p
+      </li>
+      <li v-if="loading" class="text-center py-2">Loading...</li>
+      <li
         v-for="item in items"
         :key="item.id"
         @click="select(item)"
-        class="border-b select-none relative py-3 px-2  hover:bg-blue-50 dark:hover:text-black  text-gray-500 cursor-pointer"
+        class="cursor-pointer px-2 py-3 hover:bg-gray-100"
       >
-        <div class="flex items-center justify-between dark:hover:text-black">
-          <span class="text-gray-500 font-normal block   font-body ">
-            {{ item.name }}
-          </span>
-          <span class="font-body text-sm text-gray-400 font-medium pr-3">
-            {{ item.identifier ? item.identifier : "" }}
-          </span>
-          <Icon
-            v-if="placeholder == item.name"
-            name="ic:round-check"
-            width="25"
-            height="25"
-            color="#003F7D"
-            class="cursor-pointer"
-          />
+        <div class="flex justify-between">
+          <span>{{ item.name }}</span>
+          <span class="text-sm text-gray-400">{{ item.identifier || '' }}</span>
         </div>
-      </p>
-      <div
-        v-if="!loading && items.length === 0"
-        class="text-black test-lg flex justify-center items-center pb-2"
-      >
-        <slot name="option" :item="search" />
-      </div>
+      </li>
+      <li v-if="!loading && items.length === 0" class="text-center py-2">No results found</li>
     </ul>
 
-    <p
-      :visible="errorMessage"
-      v-if="!props.hideDetail"
-      class="mt-2 text-sm text-red-600 font-body"
-      id="email-error"
-    >
-      {{ errorMessage }} &nbsp;
-    </p>
+    <p v-if="!props.hideDetail && errorMessage" class="mt-2 text-sm text-red-600">{{ errorMessage }}</p>
   </div>
 </template>

@@ -70,7 +70,6 @@ definePageMeta({
       <LayoutSectionHeader
         iconName="simple-line-icons:call-out"
         title="Let's stay connected"
-        subtitle="Contact"
       ></LayoutSectionHeader>
 
       <div class="w-full h-[60%] flex justify-center md:px-20 p-4">
