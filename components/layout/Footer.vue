@@ -129,16 +129,17 @@ const loading = ref(false);
 const currentYear = computed(() => new Date().getFullYear());
 
 const socialIcons = [
-  { name: 'uil:facebook', link: '#' },
-  { name: 'uil:twitter', link: '#' },
-  { name: 'uil:instagram', link: '#' },
-  { name: 'uil:linkedin', link: '#' }
+  { name: 'uil:facebook', link: 'https://www.facebook.com/EthiopianYouthEntrepreneursAssociation' },
+  { name: 'uil:youtube', link: 'https://youtube.com/@eyea_et' },
+  { name: 'uil:instagram', link: 'https://www.instagram.com/eyea_et' },
+  { name: 'uil:linkedin', link: 'https://www.linkedin.com/company/eyea-et' },
+  { name: 'uil:telegram', link: 'https://t.me/eyea_et' },
 ];
 
 const serviceLinks = [
   { name: 'Kena', link: 'https://kena.eyea.et' },
   { name: 'Zelela', link: 'https://zelela.eyea.et' },
-  { name: 'Events', link: 'https://www.eyea.et/events' },
+  { name: 'Annual summit', link: 'https://eventzelela.eyea.et/' },
   { name: 'Privacy', link: 'https://www.eyea.et/privacy' }
 ];
 

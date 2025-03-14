@@ -10,7 +10,7 @@
 
     <!-- Cursor Tracker Canvas -->
     <canvas ref="trailCanvas" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 1;"></canvas>
-
+5
     <!-- Content Container -->
     <div class="container mx-auto py-28 px-4 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
@@ -69,7 +69,7 @@
         <div class="relative group">
           <div class="relative rounded-2xl overflow-hidden shadow-2xl transform transition-all duration-300 hover:rotate-1">
             <img 
-              src="@/assets/images/temp/WhatsApp%20Image%202025-02-17%20at%2017.38.21_69609b91.jpg"
+              src="@/assets/images/temp/hero.jpg"
               alt="EYEA Members Collaborating" 
               class="w-full h-[600px] object-cover transform transition-transform duration-500 group-hover:scale-105"
             />
