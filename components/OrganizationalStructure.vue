@@ -347,7 +347,7 @@ export default {
 
 <style scoped>
 .org-structure {
-  @apply bg-white dark:bg-gray-900 p-4 md:p-8 min-h-screen;
+  @apply relative bg-gradient-to-b from-gray-100 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate;
 }
 
 .title {

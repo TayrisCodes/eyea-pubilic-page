@@ -51,22 +51,18 @@ onResult((result) => {
 <template>
   <div class="about-page">
     <!-- NavBar -->
-    <NavBar nav-class="dark:bg-gray-800 bg-white" />
-
-    <!-- Hero Section -->
+    <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg" />
     <section class="hero-section relative overflow-hidden">
-      <div class="absolute inset-0 bg-gradient-to-b from-[#215ca3]/10 to-white/0 dark:from-[#215ca3]/10 dark:to-gray-900/0 -z-10" />
-      <div class="absolute -top-20 -right-20 w-64 h-64 bg-[#215ca3]/10 dark:bg-[#215ca3]/10 rounded-full blur-3xl -z-10" />
-      <div class="absolute bottom-20 -left-20 w-80 h-80 bg-[#fcb217]/10 dark:bg-[#fcb217]/10 rounded-full blur-3xl -z-10" />
+      <div class="relative from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate"/>
 
       <div class="container mx-auto px-4 py-16 md:py-24 lg:py-32">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div class="lg:col-span-5 relative z-10">
-            <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold mb-6 text-gray-900 dark:text-white leading-tight">
+            <h1 class="text-4xl md:text-5xl xl:text-6xl font-bold mb-6 text-gray-900 dark:text-black leading-tight">
               <span class="text-[#215ca3]">Empowering</span> Young Ethiopian Entrepreneurs
             </h1>
             <div class="w-24 h-1 bg-[#215ca3] mb-6" />
-            <p class="text-lg text-gray-700 dark:text-gray-300 mb-8">
+            <p class="text-lg text-gray-700 dark:text-gray-800 mb-8">
               Founded to overcome barriers and ignite innovation for Ethiopia's youth.
             </p>
             <div class="flex flex-wrap gap-4">
@@ -113,7 +109,7 @@ onResult((result) => {
     </section>
 
     <!-- Purpose and Needs Section -->
-    <section class="purpose-needs-section bg-gradient-to-br from-[#fcb217]/10 to-[#369d65]/10 dark:from-gray-800 dark:to-gray-900 py-16 md:py-24">
+    <section class="relative from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate py-16 md:py-24">
       <div class="container mx-auto px-4">
         <LayoutSectionHeader
           iconName="fluent-emoji-high-contrast:open-mailbox-with-lowered-flag"
@@ -135,7 +131,7 @@ onResult((result) => {
             </div>
             <div class="mt-8">
               <NuxtLink to="/join">
-                <button class="btn-outline-primary w-full md:w-auto">
+                <button class="btn-primary w-full md:w-auto">
                   Join Now
                   <Icon name="heroicons:user-plus" class="ml-2" />
                 </button>

@@ -44,26 +44,40 @@
           </ul>
 
           <!-- CTA Button -->
-          <NuxtLink
-            to="/events#EYEA-events"
-            class="cta-button"
-          >
-            <span class="button-text">Explore Our Calendar</span>
-            <svg
-              class="arrow-icon animate-pulse"
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
+          <div class="cta-buttons">
+            <NuxtLink
+              to="/events#EYEA-events"
+              class="cta-button"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
-          </NuxtLink>
+              <span class="button-text">Explore Our Calendar</span>
+              <svg
+                class="arrow-icon animate-pulse"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8l4 4m0 0l-4 4m4-4H3"
+                />
+              </svg>
+            </NuxtLink>
+
+            <NuxtLink
+              to="https://eventzelela.eyea.et"
+              class="cta-button register-button"
+            >
+            <span class="button-text">
+              Zelela 2.o<br>
+              Annual Summit 2025<br>
+              Registration
+            </span>
+          
+            </NuxtLink>
+          </div>
         </div>
 
         <!-- Image Gallery -->
@@ -142,8 +156,8 @@ const heroEvents = ref([
 }
 
 .dark-mode .hero-section {
-  background-color: #1a1a1a; /* Dark background */
-  color: #f5f5f5; /* Text color for dark mode */
+  background-color: #B5B5B53B; /* Dark background */
+  color: #B5B5B53B; /* Text color for dark mode */
 }
 
 .container {
@@ -260,25 +274,74 @@ const heroEvents = ref([
 
 /* CTA Button */
 .cta-button {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
+  position: relative;
+  display: flex;
   background-color: #34126c  ; /* Primary color */
   color: #ffffff;
   padding: 16px 32px;
   border-radius: 1rem;
   font-size: 1rem;
   font-weight: 600;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-  margin-top: 24px;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 32px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-align: center;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  min-height: 80px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
 }
 
 .cta-button:hover {
   background-color: #34126c  ; /* Darker primary color */
   box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
 }
+/* CTA Buttons Container */
+.cta-buttons {
+  display: grid; /* Use grid layout */
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Responsive columns */
+  gap: 16px; /* Spacing between buttons */
+  margin-top: 24px;
+  align-items: center; /* Vertically center align buttons */
+}
+/* Animated Hover Effect */
+.hover-effect {
+  position: absolute;
+  width: 150%;
+  height: 150%;
+  background: radial-gradient(circle, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0) 70%);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
 
+/* Button Text Styling */
+.button-text {
+  position: relative;
+  z-index: 1;
+  font-size: 1.1rem;
+  letter-spacing: 0.5px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.summit-button .button-text {
+  line-height: 1.3;
+}
+
+/* Remove flex-direction from the media query */
+@media (max-width: 768px) {
+  .cta-buttons {
+    /* flex-direction: column;  Remove this line */
+    gap: 12px;
+  }
+
+  .cta-button, .register-button {
+    width: 100%;
+    justify-content: center;
+  }
+}
 .button-text {
   font-weight: 600;
 }

@@ -48,7 +48,7 @@ const onSubmit = handleSubmit((values) => {
             <div>
               <h3 class="text-lg font-semibold text-dark-primary dark:text-white">Address</h3>
               <p class="text-dark-light dark:text-dark-text-secondary">
-                Ethiopia Youth Entrepreneurs Association, Addis Ababa, Ethiopia
+                Dink Sira Building (4 Floor), Arat Killo, Office Number-D066, Addis Ababa, Ethiopia 
               </p>
             </div>
           </div>
@@ -57,7 +57,7 @@ const onSubmit = handleSubmit((values) => {
             <div>
               <h3 class="text-lg font-semibold text-dark-primary dark:text-white">Phone</h3>
               <p class="text-dark-light dark:text-dark-text-secondary">
-                +251 911 123 456
+                +251 922 02 41 97
               </p>
             </div>
           </div>
@@ -66,7 +66,7 @@ const onSubmit = handleSubmit((values) => {
             <div>
               <h3 class="text-lg font-semibold text-dark-primary dark:text-white">Email</h3>
               <p class="text-dark-light dark:text-dark-text-secondary">
-                contact@eyea.et
+                info@eyea.et
               </p>
             </div>
           </div>

@@ -56,7 +56,7 @@
           <!-- CTA -->
           <NuxtLink 
             to="/membership" 
-            class="inline-flex items-center gap-4 px-8 py-4 bg-gradient-to-r from-[#fcb217] to-[#245ca4] hover:from-[#3c8c80] hover:to-[#405c90] text-white font-semibold rounded-xl shadow-lg transition-all duration-300 animate-pulse-custom"
+            class="inline-flex items-center gap-4 px-8 py-4 bg-[#215ca3] text-white font-semibold rounded-xl shadow-lg transition-all duration-300 animate-pulse-custom"
           >
             Join Our Network
             <svg class="w-5 h-5 animate-bounce-horizontal" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -14,12 +14,12 @@ onResult((result) => {
 <template>
   <div>
     <!----------------------- Nav Bar  ---------------------------->
-    <NavBar navClass="dark:bg-dark-secondary"></NavBar>
+    <NavBar navClass="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg"></NavBar>
     <!----------------------- Event Hero  ---------------------------->
     <EventHero></EventHero>
 
     <!----------------------- Event  card  ---------------------------->
-    <div
+    <!--<div
       id="EYEA-events"
       class="relative w-full px-4 pb-10 font-poppins md:px-20 dark:bg-dark-secondary"
     >
@@ -43,7 +43,7 @@ onResult((result) => {
         <div v-else class="h-[30vh] dark:text-white">No Events yet</div>
       </div>
       <Basic-PageLoading v-else />
-    </div>
+    </div>-->
   </div>
   <LayoutFooter></LayoutFooter>
 </template>

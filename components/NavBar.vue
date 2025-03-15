@@ -313,7 +313,7 @@ const testFunc = () => {
               :class="[
                 navbar.name == route.path.split('/')[1]
                   ? 'text-primary dark:text-primary'
-                  : 'text-secondary-text dark:text-white',
+                  : 'text-secondary-text',
                 navbar.name === 'membership' && !user.isLoggedIn
                   ? '!hidden !w-0 overflow-hidden !h-0'
                   : '',

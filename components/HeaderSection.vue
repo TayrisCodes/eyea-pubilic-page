@@ -8,7 +8,7 @@
         Welcome to the Ethiopian Youth Entrepreneurs Association (EYEA)
       </h1>
       <h2
-        class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#fcb217] animate-fade-in delay-200"
+        class="text-2xl sm:text-3xl lg:text-4xl font-semibold text-[#245ca4] animate-fade-in delay-200"
       >
         Empowering the Next Generation of Innovators and Entrepreneurs
       </h2>
