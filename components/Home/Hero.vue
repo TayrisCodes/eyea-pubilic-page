@@ -10,7 +10,6 @@
 
     <!-- Cursor Tracker Canvas -->
     <canvas ref="trailCanvas" class="absolute inset-0 w-full h-full pointer-events-none" style="z-index: 1;"></canvas>
-5
     <!-- Content Container -->
     <div class="container mx-auto py-28 px-4 relative z-10">
       <div class="grid lg:grid-cols-2 gap-16 items-center">
