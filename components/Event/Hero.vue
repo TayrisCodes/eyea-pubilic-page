@@ -1,12 +1,12 @@
 <template>
-  <section class="hero-section">
+  <section class="hero-section ">
     <!-- Gradient Overlay -->
     <div class="gradient-overlay"></div>
 
     <div class="container">
       <div class="hero-grid">
         <!-- Content Block -->
-        <div class="hero-content">
+        <div class="hero-content ">
           <span class="tagline">Engagement & Advocacy Platform</span>
           <h1 class="title">
             Shaping Futures Through

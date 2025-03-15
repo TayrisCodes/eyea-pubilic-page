@@ -1,5 +1,5 @@
 <template>
-  <section class="org-structure">
+  <section class="org-structure  bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg">
     <!-- Title -->
     <h2 class="title">EYEA Organizational Structure</h2>
 
@@ -347,7 +347,7 @@ export default {
 
 <style scoped>
 .org-structure {
-  @apply relative bg-gradient-to-b from-gray-100 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate;
+  @apply relative bg-white dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate;
 }
 
 .title {

@@ -119,8 +119,8 @@ onMounted(() => {
     </div>
     
     <!-- Navigation Bar (matching the provided image) -->
-      <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg" />
-    <!-- Search Bar -->
+      <NavBar nav-class="bg-gradient-to-br from-[#f8f9fa] to-[#e9ecef] dark:from-[#1a202c] dark:to-[#2d3748] relative overflow-hidden" />
+      <!-- Search Bar -->
         <!-- <div class="search-container">
       <div class="container mx-auto px-4 py-4">
         <div class="max-w-md mx-auto relative">

@@ -10,7 +10,7 @@ onMounted(() => {
 
 <template>
   <div>
-    <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg" />
+    <NavBar nav-class="bg-[#215ca3]/25 dark:bg-dark-primary backdrop-blur-lg"/>
     <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
       <!-- Hero Section -->
       <div class="relative py-24 sm:py-32 bg-gradient-to-b from-[#215ca3]/30 dark:from-[#215ca3]/20">

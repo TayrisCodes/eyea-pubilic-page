@@ -52,7 +52,7 @@ onResult((result) => {
   <div class="about-page">
     <!-- NavBar -->
     <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg" />
-    <section class="hero-section relative overflow-hidden">
+    <section class="hero-section bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg">
       <div class="relative from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate"/>
 
       <div class="container mx-auto px-4 py-16 md:py-24 lg:py-32">
@@ -109,7 +109,7 @@ onResult((result) => {
     </section>
 
     <!-- Purpose and Needs Section -->
-    <section class="relative from-gray-50 to-gray-100 dark:from-gray-900 dark:to-gray-800 overflow-hidden isolate py-16 md:py-24">
+    <section class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg dark:to-gray-800 overflow-hidden isolate py-16 md:py-24">
       <div class="container mx-auto px-4">
         <LayoutSectionHeader
           iconName="fluent-emoji-high-contrast:open-mailbox-with-lowered-flag"
