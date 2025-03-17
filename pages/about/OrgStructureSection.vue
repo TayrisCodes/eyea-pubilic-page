@@ -353,9 +353,6 @@ export default {
   --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
   --shadow-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
   --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-
-  --gradient-light: linear-gradient(to bottom, #f9fafb, #f3f4f6); /* from-gray-50 to gray-100 */
-  --gradient-dark: linear-gradient(to bottom, #1f2937, #1c1f24); /* from-gray-900 to gray-800 */
 }
 
 @media (prefers-color-scheme: dark) {
@@ -372,11 +369,11 @@ export default {
 }
 
 body {
-  background: var(--gradient-light); /* Default light background */
+  background-color: var(--bg-color);
   color: var(--text-color);
   margin: 0;
   padding: 0;
-  transition: background 0.3s ease;
+  transition: background-color 0.3s ease;
   min-height: 100vh;
 }
 
@@ -610,12 +607,6 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: var(--gradient-dark); /* Dark mode background */
-  }
 }
 
 @media (max-width: 768px) {

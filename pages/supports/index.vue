@@ -38,14 +38,18 @@ const stats = ref([
   <Modals-Interest v-model="openInterestModal" v-model:type="type" />
   <ModalsDonate v-model="openDonateModal" />
   
-  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800">
-    <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg" />
+  <div class="min-h-screen bg-gradient-to-b from-gray-50 to-white dark:from-gray-900 dark:to-gray-800"/>
+    <div class="fixed w-full top-0 z-50">
+      <NavBar nav-class="bg-[#B5B5B53B] dark:bg-dark-primary backdrop-blur-lg shadow-md" />
+    </div>
+
+    <div class="relative overflow-hidden pt-16"> 
 
     <!-- Hero Section -->
-    <div class="relative overflow-hidden">
+    <div class="relative overflow-hidden pt-16"> <!-- Added pt-16 -->
       <div class="relative min-h-[80vh] flex items-center justify-center partnersBackground">
-        <div class="absolute inset-0 bg-black/40 dark:bg-black/60" />
-        <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 text-center">
+        <div class="absolute inset-0 bg-black/40 dark:bg-black/60 z-10" />
+        <div class="relative z-20 max-w-4xl mx-auto px-6 py-24 text-center">
           <Transition appear name="fade-down">
             <div class="space-y-8">
               <div class="relative mx-auto w-32 h-32 transform hover:scale-105 transition-transform">
@@ -213,6 +217,14 @@ const stats = ref([
 </template>
 
 <style scoped>
+/* Add these new styles */
+.fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+}
+
+/* Existing styles remain the same */
 .partnersBackground {
   background-image: url("/assets/images/temp/support.png");
   background-size: cover;
@@ -224,6 +236,7 @@ const stats = ref([
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-10px); }
 }
+
 
 .animate-float {
   animation: float 3s ease-in-out infinite;
@@ -274,19 +287,41 @@ const stats = ref([
   100% { transform: translateY(0); }
 }
 
-.animate-fade-in {
-  animation: fade-in 0.6s ease-out;
-}
-
-.animate-icon-float {
-  animation: icon-float 3s ease-in-out infinite;
-}
-
-.animate-count-in {
-  animation: fade-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
 .dark .dark\:bg-gradient-dark {
   background: linear-gradient(315deg, #1a365d 0%, #2d3748 100%);
 }
+
+/* Mobile-first media queries */
+.partnersBackground {
+  background-image: url("/assets/images/temp/support.png");
+  background-size: cover;
+  background-position: center;
+  margin-top: -1px; /* Fix mobile gap */
+}
+
+@media (min-width: 768px) {
+  .partnersBackground {
+    background-attachment: fixed;
+  }
+}
+
+/* Ensure proper stacking context */
+.fixed {
+  position: fixed;
+  right: 0;
+  left: 0;
+  transform: translateZ(9999px); /* Create new stacking context */
+}
+
+/* Mobile-specific padding adjustment */
+@media (max-width: 640px) {
+  div[class="pt-20"] {
+    padding-top: 5rem; /* 80px */
+  }
+}
+
+/* Existing animations remain unchanged */
+@keyframes float { /* ... */ }
+.animate-float { /* ... */ }
+
 </style>

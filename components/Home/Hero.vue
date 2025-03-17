@@ -20,17 +20,20 @@
             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
               <path d="M12 2L4 5v6.09c0 5.05 3.41 9.76 8 10.91 4.59-1.15 8-5.86 8-10.91V5l-8-3zm0 15.93V21c-3.17-.78-5.6-3.65-6-7H6c.4 3.29 2.97 6 6 6.93zM18 11c-.4 3.29-2.83 6.12-6 7v-2.93c3.03-.93 5.6-3.61 6-6.07h-6v-2h6V6l-6 2.25V4.26L18 6v5z"/>
             </svg>
-            <span>Ethiopian Youth Entrepreneurs Association</span>
+            <span>ETHIOPIAN YOUTH ENTREPRENEURS ASSOCIATION</span>
           </div>
 
           <!-- Main Title -->
-          <h1 class="text-5xl lg:text-6xl font-bold text-gray-900 dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
-            Empowering 
-            <span class="relative inline-block bg-gradient-to-r from-[#215ca3] to-[#fcb217] bg-clip-text text-transparent">
-              Ethiopia's Future
-              <div class="absolute bottom-2 inset-x-0 h-3 bg-[#369d65]/30 -rotate-1"></div>
+          <h1>
+            <span class="text-5xl lg:text-6xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+              INCLUSIVE!
             </span>
-            Business Leaders
+            <span class="text-5xl lg:text-6xl font-bold text-[#fcb217] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+              INNOVATIVE!
+            </span>
+            <span class="text-5xl lg:text-6xl font-bold text-[#369d65] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+              DISRUPTIVE!
+            </span>
           </h1>
 
 
@@ -78,7 +81,7 @@
             <div class="absolute bottom-8 left-8 text-white">
               <div class="flex gap-8">
                 <div class="pr-8 border-r border-white/20">
-                  <div class="text-2xl font-bold"><span class="stat-number">0</span>+</div>
+                  <div class="text-2xl font-bold"><span class="stat-number">502</span>+</div>
                   <div class="text-sm">Fully registered Entrepreneurs</div>
                 </div>
                 <div>
