@@ -13,7 +13,7 @@ definePageMeta({
     <div class="absolute -z-10 xl:inline-block hidden">
       <img
         alt=""
-        src="@/assets/images/shapes/cornerSwish.png"
+
         sizes=""
         srcset=""
       />
