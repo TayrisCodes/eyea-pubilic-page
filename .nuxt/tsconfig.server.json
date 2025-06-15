@@ -12,69 +12,69 @@
     "jsxFragmentFactory": "Fragment",
     "paths": {
       "#imports": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/.nuxt/types/nitro-imports"
+        "C:/Users/aman2/eyea-pubilic-page/.nuxt/types/nitro-imports"
       ],
       "#paths": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/node_modules/nuxt/dist/core/runtime/nitro/paths"
+        "C:/Users/aman2/eyea-pubilic-page/node_modules/nuxt/dist/core/runtime/nitro/paths"
       ],
       "~": [
-        "C:/Users/tarik/Projects/eyea-web-client-main"
+        "C:/Users/aman2/eyea-pubilic-page"
       ],
       "~/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/*"
+        "C:/Users/aman2/eyea-pubilic-page/*"
       ],
       "@": [
-        "C:/Users/tarik/Projects/eyea-web-client-main"
+        "C:/Users/aman2/eyea-pubilic-page"
       ],
       "@/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/*"
+        "C:/Users/aman2/eyea-pubilic-page/*"
       ],
       "~~": [
-        "C:/Users/tarik/Projects/eyea-web-client-main"
+        "C:/Users/aman2/eyea-pubilic-page"
       ],
       "~~/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/*"
+        "C:/Users/aman2/eyea-pubilic-page/*"
       ],
       "@@": [
-        "C:/Users/tarik/Projects/eyea-web-client-main"
+        "C:/Users/aman2/eyea-pubilic-page"
       ],
       "@@/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/*"
+        "C:/Users/aman2/eyea-pubilic-page/*"
       ],
       "assets": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/assets"
+        "C:/Users/aman2/eyea-pubilic-page/assets"
       ],
       "assets/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/assets/*"
+        "C:/Users/aman2/eyea-pubilic-page/assets/*"
       ],
       "public": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/public"
+        "C:/Users/aman2/eyea-pubilic-page/public"
       ],
       "public/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/public/*"
+        "C:/Users/aman2/eyea-pubilic-page/public/*"
       ],
       "#image": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/node_modules/@nuxt/image/dist/runtime"
+        "C:/Users/aman2/eyea-pubilic-page/node_modules/@nuxt/image/dist/runtime"
       ],
       "#image/*": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/node_modules/@nuxt/image/dist/runtime/*"
+        "C:/Users/aman2/eyea-pubilic-page/node_modules/@nuxt/image/dist/runtime/*"
       ],
       "#apollo": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/.nuxt/apollo"
+        "C:/Users/aman2/eyea-pubilic-page/.nuxt/apollo"
       ],
       "#color-mode-options": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/.nuxt/color-mode-options"
+        "C:/Users/aman2/eyea-pubilic-page/.nuxt/color-mode-options"
       ],
       "pinia": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/node_modules/pinia/dist/pinia"
+        "C:/Users/aman2/eyea-pubilic-page/node_modules/pinia/dist/pinia"
       ],
       "#content/server": [
-        "C:/Users/tarik/Projects/eyea-web-client-main/node_modules/@nuxt/content/dist/runtime/server/index"
+        "C:/Users/aman2/eyea-pubilic-page/node_modules/@nuxt/content/dist/runtime/server/index"
       ]
     }
   },
   "include": [
-    "C:/Users/tarik/Projects/eyea-web-client-main/.nuxt/types/nitro-nuxt.d.ts",
+    "C:/Users/aman2/eyea-pubilic-page/.nuxt/types/nitro-nuxt.d.ts",
     "./types/nitro.d.ts",
     "../**/*",
     "../server/**/*"

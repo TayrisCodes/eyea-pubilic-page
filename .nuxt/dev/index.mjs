@@ -1,53 +1,53 @@
-globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/node-fetch-native/dist/polyfill.mjs';
+globalThis._importMeta_={url:import.meta.url,env:process.env};import 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/node-fetch-native/dist/polyfill.mjs';
 import { Server } from 'node:http';
 import { tmpdir } from 'node:os';
 import { join as join$1 } from 'node:path';
 import { mkdirSync } from 'node:fs';
 import { parentPort, threadId } from 'node:worker_threads';
-import { defineEventHandler, handleCacheHeaders, createEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseStatus, getRequestHeader, setResponseHeader, getRequestHeaders, getQuery as getQuery$1, getCookie, createError, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, readBody } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/h3/dist/index.mjs';
-import { createRenderer } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/vue-bundle-renderer/dist/runtime.mjs';
-import { stringify, uneval } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/devalue/index.js';
-import { createFetch as createFetch$1, Headers } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/ofetch/dist/node.mjs';
-import destr from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/destr/dist/index.mjs';
-import { createCall, createFetch } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unenv/runtime/fetch/index.mjs';
-import { createHooks } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/hookable/dist/index.mjs';
-import { snakeCase, kebabCase, pascalCase, camelCase } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/scule/dist/index.mjs';
-import { klona } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/klona/dist/index.mjs';
-import defu, { defuFn } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/defu/dist/defu.mjs';
-import { hash as hash$1 } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/ohash/dist/index.mjs';
-import { parseURL, withoutBase, joinURL, getQuery, withQuery, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/ufo/dist/index.mjs';
-import { createStorage, prefixStorage } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unstorage/dist/index.mjs';
-import unstorage_47drivers_47fs from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unstorage/drivers/fs.mjs';
-import { toRouteMatcher, createRouter } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/radix3/dist/index.mjs';
-import { extname, join } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/pathe/dist/index.mjs';
-import { unified } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unified/index.js';
-import { toString } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/mdast-util-to-string/index.js';
-import { preprocess } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/micromark/dev/lib/preprocess.js';
-import { postprocess } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/micromark/dev/lib/postprocess.js';
-import { stringifyPosition } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unist-util-stringify-position/index.js';
-import { markdownLineEnding, markdownSpace } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/micromark-util-character/dev/index.js';
-import { push, splice } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/micromark-util-chunked/dev/index.js';
-import { resolveAll } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/micromark-util-resolve-all/index.js';
-import remarkEmoji from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-emoji/index.js';
-import rehypeSlug from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/rehype-slug/index.js';
-import remarkSqueezeParagraphs from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-squeeze-paragraphs/index.js';
-import rehypeExternalLinks from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/rehype-external-links/index.js';
-import remarkGfm from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-gfm/index.js';
-import rehypeSortAttributeValues from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/rehype-sort-attribute-values/index.js';
-import rehypeSortAttributes from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/rehype-sort-attributes/index.js';
-import rehypeRaw from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/rehype-raw/index.js';
-import remarkMDC, { parseFrontMatter } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-mdc/dist/index.mjs';
-import remarkParse from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-parse/index.js';
-import remark2rehype from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/remark-rehype/index.js';
-import { all } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/mdast-util-to-hast/index.js';
-import { detab } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/detab/index.js';
-import { u as u$1 } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unist-builder/index.js';
-import { encode } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/mdurl/index.js';
-import slugify from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/slugify/slugify.js';
-import { position } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unist-util-position/index.js';
-import { visit } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unist-util-visit/index.js';
-import { FontStyle, BUNDLED_LANGUAGES, BUNDLED_THEMES, getHighlighter } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/shiki-es/dist/shiki.node.mjs';
-import { consola } from 'file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/unenv/runtime/npm/consola.mjs';
+import { defineEventHandler, handleCacheHeaders, createEvent, eventHandler, setHeaders, sendRedirect, proxyRequest, setResponseStatus, getRequestHeader, setResponseHeader, getRequestHeaders, getQuery as getQuery$1, getCookie, createError, createApp, createRouter as createRouter$1, toNodeListener, fetchWithEvent, lazyEventHandler, readBody } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/h3/dist/index.mjs';
+import { createRenderer } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/vue-bundle-renderer/dist/runtime.mjs';
+import { stringify, uneval } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/devalue/index.js';
+import { createFetch as createFetch$1, Headers } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/ofetch/dist/node.mjs';
+import destr from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/destr/dist/index.mjs';
+import { createCall, createFetch } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unenv/runtime/fetch/index.mjs';
+import { createHooks } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/hookable/dist/index.mjs';
+import { snakeCase, kebabCase, pascalCase, camelCase } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/scule/dist/index.mjs';
+import { klona } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/klona/dist/index.mjs';
+import defu, { defuFn } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/defu/dist/defu.mjs';
+import { hash as hash$1 } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/ohash/dist/index.mjs';
+import { parseURL, withoutBase, joinURL, getQuery, withQuery, withLeadingSlash, withoutTrailingSlash, isRelative } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/ufo/dist/index.mjs';
+import { createStorage, prefixStorage } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unstorage/dist/index.mjs';
+import unstorage_47drivers_47fs from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unstorage/drivers/fs.mjs';
+import { toRouteMatcher, createRouter } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/radix3/dist/index.mjs';
+import { extname, join } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/pathe/dist/index.mjs';
+import { unified } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unified/index.js';
+import { toString } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/mdast-util-to-string/index.js';
+import { preprocess } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/micromark/dev/lib/preprocess.js';
+import { postprocess } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/micromark/dev/lib/postprocess.js';
+import { stringifyPosition } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unist-util-stringify-position/index.js';
+import { markdownLineEnding, markdownSpace } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/micromark-util-character/dev/index.js';
+import { push, splice } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/micromark-util-chunked/dev/index.js';
+import { resolveAll } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/micromark-util-resolve-all/index.js';
+import remarkEmoji from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-emoji/index.js';
+import rehypeSlug from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/rehype-slug/index.js';
+import remarkSqueezeParagraphs from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-squeeze-paragraphs/index.js';
+import rehypeExternalLinks from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/rehype-external-links/index.js';
+import remarkGfm from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-gfm/index.js';
+import rehypeSortAttributeValues from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/rehype-sort-attribute-values/index.js';
+import rehypeSortAttributes from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/rehype-sort-attributes/index.js';
+import rehypeRaw from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/rehype-raw/index.js';
+import remarkMDC, { parseFrontMatter } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-mdc/dist/index.mjs';
+import remarkParse from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-parse/index.js';
+import remark2rehype from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/remark-rehype/index.js';
+import { all } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/mdast-util-to-hast/index.js';
+import { detab } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/detab/index.js';
+import { u as u$1 } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unist-builder/index.js';
+import { encode } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/mdurl/index.js';
+import slugify from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/slugify/slugify.js';
+import { position } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unist-util-position/index.js';
+import { visit } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unist-util-visit/index.js';
+import { FontStyle, BUNDLED_LANGUAGES, BUNDLED_THEMES, getHighlighter } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/shiki-es/dist/shiki.node.mjs';
+import { consola } from 'file://C:/Users/aman2/eyea-pubilic-page/node_modules/unenv/runtime/npm/consola.mjs';
 
 const r=Object.create(null),i=e=>globalThis.process?.env||globalThis._importMeta_.env||globalThis.Deno?.env.toObject()||globalThis.__env__||(e?r:globalThis),o=new Proxy(r,{get(e,s){return i()[s]??r[s]},has(e,s){const E=i();return s in E||s in r},set(e,s,E){const B=i(!0);return B[s]=E,!0},deleteProperty(e,s){if(!s)return !1;const E=i(!0);return delete E[s],!0},ownKeys(){const e=i(!0);return Object.keys(e)}}),t=typeof process<"u"&&process.env&&"development"||"",f=[["APPVEYOR"],["AWS_AMPLIFY","AWS_APP_ID",{ci:!0}],["AZURE_PIPELINES","SYSTEM_TEAMFOUNDATIONCOLLECTIONURI"],["AZURE_STATIC","INPUT_AZURE_STATIC_WEB_APPS_API_TOKEN"],["APPCIRCLE","AC_APPCIRCLE"],["BAMBOO","bamboo_planKey"],["BITBUCKET","BITBUCKET_COMMIT"],["BITRISE","BITRISE_IO"],["BUDDY","BUDDY_WORKSPACE_ID"],["BUILDKITE"],["CIRCLE","CIRCLECI"],["CIRRUS","CIRRUS_CI"],["CLOUDFLARE_PAGES","CF_PAGES",{ci:!0}],["CODEBUILD","CODEBUILD_BUILD_ARN"],["CODEFRESH","CF_BUILD_ID"],["DRONE"],["DRONE","DRONE_BUILD_EVENT"],["DSARI"],["GITHUB_ACTIONS"],["GITLAB","GITLAB_CI"],["GITLAB","CI_MERGE_REQUEST_ID"],["GOCD","GO_PIPELINE_LABEL"],["LAYERCI"],["HUDSON","HUDSON_URL"],["JENKINS","JENKINS_URL"],["MAGNUM"],["NETLIFY"],["NETLIFY","NETLIFY_LOCAL",{ci:!1}],["NEVERCODE"],["RENDER"],["SAIL","SAILCI"],["SEMAPHORE"],["SCREWDRIVER"],["SHIPPABLE"],["SOLANO","TDDIUM"],["STRIDER"],["TEAMCITY","TEAMCITY_VERSION"],["TRAVIS"],["VERCEL","NOW_BUILDER"],["VERCEL","VERCEL",{ci:!1}],["VERCEL","VERCEL_ENV",{ci:!1}],["APPCENTER","APPCENTER_BUILD_ID"],["CODESANDBOX","CODESANDBOX_SSE",{ci:!1}],["CODESANDBOX","CODESANDBOX_HOST",{ci:!1}],["STACKBLITZ"],["STORMKIT"],["CLEAVR"],["ZEABUR"],["CODESPHERE","CODESPHERE_APP_ID",{ci:!0}],["RAILWAY","RAILWAY_PROJECT_ID"],["RAILWAY","RAILWAY_SERVICE_ID"],["DENO-DEPLOY","DENO_DEPLOYMENT_ID"],["FIREBASE_APP_HOSTING","FIREBASE_APP_HOSTING",{ci:!0}]];function b(){if(globalThis.process?.env)for(const e of f){const s=e[1]||e[0];if(globalThis.process?.env[s])return {name:e[0].toLowerCase(),...e[2]}}return globalThis.process?.env?.SHELL==="/bin/jsh"&&globalThis.process?.versions?.webcontainer?{name:"stackblitz",ci:!1}:{name:"",ci:!1}}const l=b(),p=l.name;function n(e){return e?e!=="false":!1}const I=globalThis.process?.platform||"",T=n(o.CI)||l.ci!==!1,a=n(globalThis.process?.stdout&&globalThis.process?.stdout.isTTY);n(o.DEBUG);const R=t==="test"||n(o.TEST);n(o.MINIMAL)||T||R||!a;const A=/^win/i.test(I);!n(o.NO_COLOR)&&(n(o.FORCE_COLOR)||(a||A)&&o.TERM!=="dumb"||T);const C=(globalThis.process?.versions?.node||"").replace(/^v/,"")||null;Number(C?.split(".")[0])||null;const y=globalThis.process||Object.create(null),_={versions:{}};new Proxy(y,{get(e,s){if(s==="env")return o;if(s in e)return e[s];if(s in _)return _[s]}});const c=globalThis.process?.release?.name==="node",O=!!globalThis.Bun||!!globalThis.process?.versions?.bun,D=!!globalThis.Deno,L=!!globalThis.fastly,S=!!globalThis.Netlify,u=!!globalThis.EdgeRuntime,N=globalThis.navigator?.userAgent==="Cloudflare-Workers",F=[[S,"netlify"],[u,"edge-light"],[N,"workerd"],[L,"fastly"],[D,"deno"],[O,"bun"],[c,"node"]];function G(){const e=F.find(s=>s[0]);if(e)return {name:e[1]}}const P=G();P?.name||"";
 
@@ -275,7 +275,7 @@ new Proxy(/* @__PURE__ */ Object.create(null), {
   }
 });
 
-const serverAssets = [{"baseName":"server","dir":"C:/Users/tarik/Projects/eyea-web-client-main/server/assets"}];
+const serverAssets = [{"baseName":"server","dir":"C:/Users/aman2/eyea-pubilic-page/server/assets"}];
 
 const assets = createStorage();
 
@@ -287,12 +287,12 @@ const storage = createStorage({});
 
 storage.mount('/assets', assets);
 
-storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main\\content","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main\\.nuxt\\content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main\\server","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
-storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\tarik\\Projects\\eyea-web-client-main\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('content:source:content', unstorage_47drivers_47fs({"name":"content:source:content","driver":"fs","base":"C:\\Users\\aman2\\eyea-pubilic-page\\content","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache:content', unstorage_47drivers_47fs({"driver":"fs","base":"C:\\Users\\aman2\\eyea-pubilic-page\\.nuxt\\content-cache","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('root', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\aman2\\eyea-pubilic-page","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('src', unstorage_47drivers_47fs({"driver":"fs","readOnly":true,"base":"C:\\Users\\aman2\\eyea-pubilic-page\\server","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('build', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\aman2\\eyea-pubilic-page\\.nuxt","ignore":["**/node_modules/**","**/.git/**"]}));
+storage.mount('cache', unstorage_47drivers_47fs({"driver":"fs","readOnly":false,"base":"C:\\Users\\aman2\\eyea-pubilic-page\\.nuxt\\cache","ignore":["**/node_modules/**","**/.git/**"]}));
 
 function useStorage(base = "") {
   return base ? prefixStorage(storage, base) : storage;
@@ -594,9 +594,9 @@ function getRouteRulesForPath(path) {
   return defu({}, ..._routeRulesMatcher.matchAll(path).reverse());
 }
 
-const script$1 = "\"use strict\";(()=>{const a=window,e=document.documentElement,m=[\"dark\",\"light\"],c=window.localStorage.getItem(\"nuxt-color-mode\")||\"light\";let n=c===\"system\"?f():c;const l=e.getAttribute(\"data-color-mode-forced\");l&&(n=l),i(n),a[\"__NUXT_COLOR_MODE__\"]={preference:c,value:n,getColorScheme:f,addColorScheme:i,removeColorScheme:d};function i(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.add(t):e.className+=\" \"+t,s&&e.setAttribute(\"data-\"+s,o)}function d(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp(t,\"g\"),\"\"),s&&e.removeAttribute(\"data-\"+s)}function r(o){return a.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function f(){if(a.matchMedia&&r(\"\").media!==\"not all\"){for(const o of m)if(r(\":\"+o).matches)return o}return\"light\"}})();\n";
+const script$1 = "\"use strict\";(()=>{const a=window,e=document.documentElement,m=[\"dark\",\"light\"],c=window.localStorage.getItem(\"nuxt-color-mode\")||\"light\";let n=c===\"system\"?f():c;const l=e.getAttribute(\"data-color-mode-forced\");l&&(n=l),i(n),a[\"__NUXT_COLOR_MODE__\"]={preference:c,value:n,getColorScheme:f,addColorScheme:i,removeColorScheme:d};function i(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.add(t):e.className+=\" \"+t,s&&e.setAttribute(\"data-\"+s,o)}function d(o){const t=\"\"+o+\"\",s=\"\";e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp(t,\"g\"),\"\"),s&&e.removeAttribute(\"data-\"+s)}function r(o){return a.matchMedia(\"(prefers-color-scheme\"+o+\")\")}function f(){if(a.matchMedia&&r(\"\").media!==\"not all\"){for(const o of m)if(r(\":\"+o).matches)return o}return\"light\"}})();\r\n";
 
-const _dvEcC7BPPz = (function(nitro) {
+const _zmaW7y6AIE = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script$1}<\/script>`);
   });
@@ -607,15 +607,15 @@ window.__NUXT_DEVTOOLS_TIME_METRIC__ = window.__NUXT_DEVTOOLS_TIME_METRIC__ || {
 window.__NUXT_DEVTOOLS_TIME_METRIC__.appInit = Date.now()
 `;
 
-const _w5UHExAXb4 = (function(nitro) {
+const _TF8XOhIhfL = (function(nitro) {
   nitro.hooks.hook("render:html", (htmlContext) => {
     htmlContext.head.push(`<script>${script}<\/script>`);
   });
 });
 
 const plugins = [
-  _dvEcC7BPPz,
-_w5UHExAXb4
+  _zmaW7y6AIE,
+_TF8XOhIhfL
 ];
 
 function defineRenderHandler(handler) {
@@ -3467,7 +3467,7 @@ const json = defineTransformer({
     let parsed;
     if (typeof content === "string") {
       if (_id.endsWith("json5")) {
-        parsed = (await import('file://C:/Users/tarik/Projects/eyea-web-client-main/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
+        parsed = (await import('file://C:/Users/aman2/eyea-pubilic-page/node_modules/json5/lib/index.js').then((m) => m.default || m)).parse(content);
       } else if (_id.endsWith("json")) {
         parsed = destr(content);
       }
@@ -3816,7 +3816,7 @@ const getContentQuery = (event) => {
   return query;
 };
 
-const _IK4DBL = defineEventHandler(async (event) => {
+const _WexqKe = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   if (query.first) {
     const content = await serverQueryContent(event, query).findOne();
@@ -3847,7 +3847,7 @@ const _IK4DBL = defineEventHandler(async (event) => {
   return contents;
 });
 
-const _HkL4zv = defineEventHandler(async (event) => {
+const _1aXjeD = defineEventHandler(async (event) => {
   const { content } = useRuntimeConfig();
   const now = Date.now();
   const contents = await serverQueryContent(event).find();
@@ -3949,7 +3949,7 @@ function isObject(obj) {
   return Object.prototype.toString.call(obj) === "[object Object]";
 }
 
-const _cZpzN5 = defineEventHandler(async (event) => {
+const _Vn9qSp = defineEventHandler(async (event) => {
   const query = getContentQuery(event);
   if (!isPreview(event) && Object.keys(query).length === 0) {
     const cache = await cacheStorage.getItem("content-navigation.json");
@@ -3986,20 +3986,20 @@ const _cZpzN5 = defineEventHandler(async (event) => {
   return createNav(contents, configs);
 });
 
-const _lazy_JAQu31 = () => Promise.resolve().then(function () { return file_type$1; });
-const _lazy_HYaBnL = () => Promise.resolve().then(function () { return renderer$1; });
+const _lazy_PkeIkj = () => Promise.resolve().then(function () { return file_type$1; });
+const _lazy_rcE5E8 = () => Promise.resolve().then(function () { return renderer$1; });
 
 const handlers = [
-  { route: '/api/file_type', handler: _lazy_JAQu31, lazy: true, middleware: false, method: undefined },
-  { route: '/__nuxt_error', handler: _lazy_HYaBnL, lazy: true, middleware: false, method: undefined },
-  { route: '/api/_content/query/:qid/**:params', handler: _IK4DBL, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query/:qid', handler: _IK4DBL, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/query', handler: _IK4DBL, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/cache.json', handler: _HkL4zv, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid/**:params', handler: _cZpzN5, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation/:qid', handler: _cZpzN5, lazy: false, middleware: false, method: "get" },
-  { route: '/api/_content/navigation', handler: _cZpzN5, lazy: false, middleware: false, method: "get" },
-  { route: '/**', handler: _lazy_HYaBnL, lazy: true, middleware: false, method: undefined }
+  { route: '/api/file_type', handler: _lazy_PkeIkj, lazy: true, middleware: false, method: undefined },
+  { route: '/__nuxt_error', handler: _lazy_rcE5E8, lazy: true, middleware: false, method: undefined },
+  { route: '/api/_content/query/:qid/**:params', handler: _WexqKe, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query/:qid', handler: _WexqKe, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/query', handler: _WexqKe, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/cache.json', handler: _1aXjeD, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid/**:params', handler: _Vn9qSp, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation/:qid', handler: _Vn9qSp, lazy: false, middleware: false, method: "get" },
+  { route: '/api/_content/navigation', handler: _Vn9qSp, lazy: false, middleware: false, method: "get" },
+  { route: '/**', handler: _lazy_rcE5E8, lazy: true, middleware: false, method: undefined }
 ];
 
 function createNitroApp() {
@@ -4147,7 +4147,7 @@ const appRootTag = "div";
 
 globalThis.__buildAssetsURL = buildAssetsURL;
 globalThis.__publicAssetsURL = publicAssetsURL;
-const getClientManifest = () => import('file://C:/Users/tarik/Projects/eyea-web-client-main/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
+const getClientManifest = () => import('file://C:/Users/aman2/eyea-pubilic-page/.nuxt/dist/server/client.manifest.mjs').then((r) => r.default || r).then((r) => typeof r === "function" ? r() : r);
 const getStaticRenderedHead = () => Promise.resolve().then(function () { return _virtual__headStatic$1; }).then((r) => r.default || r);
 const getSSRStyles = lazyCachedFunction(() => Promise.resolve().then(function () { return styles$1; }).then((r) => r.default || r));
 const getSPARenderer = lazyCachedFunction(async () => {

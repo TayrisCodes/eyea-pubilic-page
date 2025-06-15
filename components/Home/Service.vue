@@ -40,7 +40,7 @@ const services = [
         class="service-card transform transition-all duration-300 hover:scale-105 hover:shadow-xl rounded-2xl overflow-hidden border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800"
       >
         <div
-          class="element relative rounded-t-2xl bg-gradient-to-r from-primary-light to-blue-600 p-6 flex justify-center items-center"
+          class="element relative rounded-t-2xl primary-light to-blue-600 p-6 flex justify-center items-center"
         >
           <Icon
             :name="service.icon"
