@@ -25,13 +25,13 @@
 
           <!-- Main Title -->
           <h1>
-            <span class="text-5xl lg:text-6xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+            <span class="text-5xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
               INCLUSIVE!
             </span>
-            <span class="text-5xl lg:text-6xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+            <span class="text-5xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
               INNOVATIVE!
             </span>
-            <span class="text-5xl lg:text-6xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
+            <span class="text-5xl font-bold text-[#215ca3] dark:text-white leading-tight" style="animation: slideUp 1s ease-out">
               DISRUPTIVE!
             </span>
           </h1>
